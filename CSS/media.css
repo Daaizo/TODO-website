@@ -1,0 +1,67 @@
+@media screen and (max-width: 720px) {
+    
+    #hamburger{
+        display: block;
+    }
+    nav ,header{
+        font-size:140%;
+    }
+    section,footer,aside{
+        font-size: 110%;
+      
+    }
+    .navBar{
+        
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        position: fixed;
+      
+        top: 0;
+        background-color: var(--secondaryColor);
+        width: 300px;
+        right: -300px;
+        height: 100%;
+        padding-top:9% ;
+    }
+    
+   
+}
+
+@media screen and (max-width: 470px) {
+    button{
+        font-size: 50%;
+   }
+   *{
+       font-size: 95%;
+   }
+    section{
+        display: block;
+        width: auto;
+    }
+    aside{
+        padding: 0%;
+        margin: 0.5% 0%;
+    }
+    aside aside{
+        display: block;
+        margin: 0.5% 0% 0% 0%;
+        padding: 1%;
+        width: auto;
+    }
+    aside h4{
+        margin : 0%;
+    }
+    img{
+        width: 70%;
+    }
+    
+}
+@media screen and (max-width: 320px) {
+    *{
+        font-size: 85%;
+    }
+    input[type ="submit"], input[type = "reset"], button {
+        font-size: 20% ;  
+     }
+}

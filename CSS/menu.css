@@ -1,0 +1,58 @@
+
+header {
+    /* position: relative; */
+    /* width: 100%; */
+    display: flex;
+    align-items: center;
+     /*space-between - pierwszy do lewej ostatni do prawej*/
+    justify-content: space-between;
+    background-color: var(--secondaryColor);
+    /* color: var(--primaryColor); */
+    padding: 0 1%;
+}
+#logo{
+     display: block; 
+   
+}
+#logo img{
+    display: block;
+    width: 100%;
+}
+
+/*nav zawiera cały panel nawigacji*/
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*cała nieuporządkowana lista (ul) z nawigacją*/
+.navBar{
+    display: flex;
+    /* justify-content: center; */
+    align-items: center; 
+    /* flex-direction: row; */
+    /**/
+    /* z-index: 1; */
+    transition: 0.5s;
+}
+
+/*wszystkie elementy list (li) dziedzące po navBar*/
+#navBar li {
+    /* list-style-type: none; */
+}
+
+/*wszystkie przyciski i linki do innych stron*/
+.navButton{
+    display: block;
+    text-decoration: none;
+    padding: 40px 25px;
+    /* font-size: 1.5rem; */
+    /* line-height: 1; */
+    transition: 0.3s;
+color: var(--actionColor);}
+
+.navButton:hover{
+     box-shadow: 0 -3px 0px var(--primaryColor); 
+    padding: 35px 25px 45px 25px;
+}

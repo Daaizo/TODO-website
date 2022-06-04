@@ -11,7 +11,7 @@
     font-size: 16px;
     font-family: 'Nuosu SIL', serif;
     margin: 0;
-    padding: 0;
+    /* padding: 0; */
     box-sizing: border-box;
 }
 
@@ -19,11 +19,11 @@
 body{
     background-color: var(--primaryColor);
     color : var(--secondaryColor); /* odwołanie się już ustawione koloru pierwszoplanowego */
-    font-size: 2rem; /*czcionka strony jest ustawiona na 16px, używająć rem odwołujemy się do wartości czcionki dla całej strony
+    /* font-size: 2rem; */ /*czcionka strony jest ustawiona na 16px, używająć rem odwołujemy się do wartości czcionki dla całej strony
     , w tym przypadku 2 * 16px = 32px, pozwala to zachować proporcje na całej stronie*/
     
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    /* padding: 0; */
 }
 
 body::-webkit-scrollbar{
@@ -37,4 +37,10 @@ body::-webkit-scrollbar-track{
 body::-webkit-scrollbar-thumb{ /*kolor całego scrolla */
     background: var(--secondaryColor);
     border-radius: 10em;
+}
+footer{
+    width: 100%;
+    position: absolute;
+    background-color: var(--secondaryColor);
+    bottom: 0;
 }

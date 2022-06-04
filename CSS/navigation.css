@@ -1,58 +1,35 @@
-
-header {
-    /* position: relative; */
-    /* width: 100%; */
-    display: flex;
-    align-items: center;
-     /*space-between - pierwszy do lewej ostatni do prawej*/
-    justify-content: space-between;
-    background-color: var(--secondaryColor);
-    /* color: var(--primaryColor); */
-    padding: 0 1%;
-}
-#logo{
-    /* display: block; */
-   
-}
-#logo img{
-    display: block;
-    width: 100%;
-}
-
 /*nav zawiera cały panel nawigacji*/
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+nav {
+    font-size: 1rem;
+    width: 6rem;
+    position: fixed;
+    height: 100vh;
+    background-color: var(--secondaryColor);
 }
-
 /*cała nieuporządkowana lista (ul) z nawigacją*/
 #navBar{
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
-    /* justify-content: center; */
-    align-items: center; 
-    /* flex-direction: row; */
-    /**/
-    /* z-index: 1; */
-    transition: 0.5s;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
 }
 
-/*wszystkie elementy list (li) dziedzące po navBar*/
-#navBar li {
-    /* list-style-type: none; */
+/*wszystkie elementy list (li) */
+#navItem {
+    width: 100%;
+  
 }
-
-/*wszystkie przyciski i linki do innych stron*/
+/*ostani element nawigacji zawsze na sam dół*/
+#navItem:last-child{
+    margin-top: auto;
+}
+/*wszystkie przyciski do innych stron*/
 .navButton{
-    display: block;
+    display: flex;
+    align-items: center;
+    height: 6rem;
     text-decoration: none;
-    padding: 40px 25px;
-    /* font-size: 1.5rem; */
-    /* line-height: 1; */
-    transition: 0.3s;
-color: var(--actionColor);}
-
-.navButton:hover{
-    /* box-shadow: 0 6px 0px var(--primaryColor); */
-    /* border-color: aliceblue; */border-bottom: 1 solid aliceblue;border-bottom: 3px solid var(--primaryColor);border-radius: 2px;padding: 25px 45px;
 }
