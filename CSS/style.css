@@ -25,7 +25,7 @@ body{
     
     /* margin: 0; */
     /* padding: 0; */
-}
+min-height: max-content;margin-bottom: 3rem;}
 
 body::-webkit-scrollbar{
     width: 0.50rem;
@@ -41,8 +41,8 @@ body::-webkit-scrollbar-thumb{ /*kolor całego scrolla */
 }
 footer{
     width: 100%;
-    position: absolute;
+    position: fixed;
     background-color: var(--secondaryColor);
     bottom: 0;
 /* margin-bottom: 38rem; *//* height: 50px; */
-  /* flex-shrink: 0; */clear: both;/* margin-top: -50px; */}
+  /* flex-shrink: 0; *//* clear: both; *//* margin-top: -50px; */}

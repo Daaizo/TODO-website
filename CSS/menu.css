@@ -1,8 +1,8 @@
 
 header {
-    /* position: relative; */
-    /* width: 100%; */
-    display: flex;
+    position: sticky;
+    width: 100%;
+    top: 0;display: flex;
     align-items: center;
      /*space-between - pierwszy do lewej ostatni do prawej*/
     justify-content: space-between;
@@ -40,8 +40,10 @@ nav {}
 transition: 0.5s;}
 
 /*wszystkie elementy list (li) dziedzące po navBar*/
-#navBar li {
-    /* list-style-type: none; */
+nav li {
+    
+	width: 100%;
+	list-style: none;
 }
 
 /*wszystkie przyciski i linki do innych stron*/
