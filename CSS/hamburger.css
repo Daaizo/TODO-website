@@ -2,8 +2,8 @@
     display: none;
 }
 #hamburgerCheckbox {
-    height: 25px;
-    width: 32px;
+    height: 30px;
+    width: 38px;
     top: 20px;
     right: 25px;
     position: absolute;
@@ -15,9 +15,9 @@
   }
   
  .hamburger-lines {
-    height: 25px;
-    width: 32px;
-    top: 20px;
+    height: 27px;
+    width: 33px;
+    top: 17px;
     right: 25px;
     position: absolute;
   
@@ -49,7 +49,8 @@
 }
 
   /* ~ jest tak zwanym CSS hack, pozwala bez użycia java scriptu zmienić styl danego elemenu po akcji
-     w tym przypadku po zaznaczeniu checkboxa, który jest ukryty pod przyciskiem od menu*/
+     w tym przypadku po zaznaczeniu checkboxa, który jest ukryty pod przyciskiem od menu
+  */
   
 #hamburgerCheckbox:checked ~ .hamburger-lines .line1 {
     transform: rotate(45deg);
@@ -61,11 +62,6 @@
   
 #hamburgerCheckbox:checked ~ .hamburger-lines .line3 {
     transform: rotate(-45deg);
-}
-
-#hamburgerCheckbox:checked ~ .navBar,
-.showNavigation{
-    right: 0;
 }
 
 

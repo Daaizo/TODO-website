@@ -5,13 +5,14 @@
     raz zdefiniowane mogą zostać użyte także w innych plikach css
  */ 
 *{
+    --padding: 0.925rem;
     --primaryColor: #b4cfea;
     --secondaryColor:#4d56b9;
     --actionColor:#009FFF;
     font-size: 16px;
     font-family: 'Nuosu SIL', serif;
     margin: 0;
-    /* padding: 0; */
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -43,4 +44,5 @@ footer{
     position: absolute;
     background-color: var(--secondaryColor);
     bottom: 0;
-}
+/* margin-bottom: 38rem; *//* height: 50px; */
+  /* flex-shrink: 0; */clear: both;/* margin-top: -50px; */}
