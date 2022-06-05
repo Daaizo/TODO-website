@@ -5,7 +5,7 @@
     raz zdefiniowane mogą zostać użyte także w innych plikach css
  */ 
 *{
-    --padding: 0.925rem;
+   
     --primaryColor: #b4cfea;
     --secondaryColor:#4d56b9;
     --actionColor:#009FFF;

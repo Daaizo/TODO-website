@@ -1,0 +1,77 @@
+#form{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    padding-top: 50px;
+}
+
+.formButtons{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.formContent {
+background-color: var(--primaryColor);
+    margin: 5% 10%;
+    padding: 5%;/* width: 50rem; */ /* Could be more or less, depending on screen size */
+  }
+
+  .close {
+    /* position: fixed; */
+    background-color: transparent;
+    border: none;
+    width: max-content;
+    height: max-content;
+    
+    margin: auto;font-size: 40px;
+    font-weight: bold;
+    align-items: flex-start;color: #f1f1f1;
+  /* margin-top: 0; *//* margin-left: auto; */ 
+/* margin-right: 0; */}
+  
+  .close:hover,
+  .close:focus {
+    background-color: transparent;
+    border: none;
+    color: #f44336;
+    cursor: pointer;
+  }
+  .blur{
+     filter: blur(8px);
+    -webkit-filter: blur(8px);
+}
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  /* Add a background color when the inputs get focus */
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  .cancelButton{
+
+  border-color: red;
+color: red;}
+ .submitButton{
+  border-color: green
+  ;color: green;}
+ 
+  .cancelButton:hover{
+
+  /* border-color: red; */
+background-color: red;color: white;}
+ .submitButton:hover{
+  /* border-color: green; */background-color: green;;;color: white;}
