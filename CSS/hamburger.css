@@ -63,7 +63,8 @@
     transform: rotate(-45deg);
 }
 
-#hamburgerCheckbox:checked ~ .navBar{
+#hamburgerCheckbox:checked ~ .navBar,
+.showNavigation{
     right: 0;
 }
 
