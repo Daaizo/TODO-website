@@ -10,7 +10,8 @@ body,html{
   background-image: url('../ICONS/background.jpg');
 
   /* Set a specific height */
-  min-height: 1500px;
+  min-height: 100%;
+  height: 100%;
   /* display: inline-table; *//* width: auto; */
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
@@ -29,25 +30,36 @@ body,html{
 
 #textLogo{
     display: block;
-    /* top: 268rem; */
     margin-left: auto;
     margin-right: auto;
-    width: auto;
-padding-top: 18rem;}
+    width: 100%;
+    padding: 10%;
+}
 
 
 .box{
-
   background-color: #ff737e;
   width: 100%;
-  padding: 40px;
-
+  height:40%;
+  padding: 3%;
+  display: flex;
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+.box2{
+  position: fixed;
+  background-color: #ff737e;
+  width: 100%;
+  margin: auto;
   font-size: 2rem;
   text-align: center;color: #fff;
-
-  margin-top: 26rem;
-  
-/* transition: 0.5s; */}
+  bottom: 0;
+}
 
 button{
     background-color: var(--primaryColor);
@@ -71,7 +83,7 @@ button:hover{
 }
 
 
-/* The Modal (background) */
+/* całę wykskakujace okno */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -85,10 +97,47 @@ button:hover{
     padding-top: 50px;
   }
   
-  /* Modal Content/Box */
+  /* wykskakujace okno - środek */
   .modal-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 5% auto 15% auto;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 80%;
+
   }
+
+  #comments{
+    display: block;
+    width: auto;
+    margin: 1%;
+    padding: 1%;
+    
+  }
+  td{
+    
+    text-align: center;
+    
+    width: max-content;
+    height: max-content;
+    
+    text-align: auto;
+    margin:5%;
+    border : 1px solid var(--secondaryColor);
+    border-radius: 8px;
+    padding: 2%;
+    object-fit: cover;
+  }
+
+   #tableTitle  {
+    border :none;
+  }
+   table tr{
+    width: 100%;
+    width: max-content;
+    margin:5%;
+   
+ 
+    padding: 1%;
+  }
+  
+  
