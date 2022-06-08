@@ -2,24 +2,15 @@
 //sprawdź czy DOM został załadowany:
 
 document.addEventListener("DOMContentLoaded", function() {
-    $(".slick-arrow").css("z-index","100");
-    $(".slick-prev").css("z-index","100");
-    $("#comments").css("width","100%");
-    $("#comments").css("z-index","10");
+
     
 	fetch("https://jsonplaceholder.typicode.com/comments/")
     .then(response => response.json())
     .then(json => printData(json));
-
-
-    $('#loginWithoutAccount').on('click', function(){
-       
-        location.href("http://localhost/PROJEKT%20KOŃCOWY%20DANIEL%20CHARLAK/HTML/login.html")    
-    })
-    ;
    
    
 });
+
 function printData(json){
     console.log(json);
     var lista = json;

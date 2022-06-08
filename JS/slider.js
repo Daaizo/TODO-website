@@ -4,7 +4,7 @@
  
     $('.single-item').slick({
       infinite: true,
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 1500,
       speed: 600,
       slidesToShow: 3,
