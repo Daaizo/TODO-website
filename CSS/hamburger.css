@@ -51,9 +51,10 @@
   transition: transform 0.4s;
 }
 
-/* ~ jest tak zwanym CSS hack, pozwala bez użycia java scriptu zmienić styl danego elemenu po akcji
+/* ~  pozwala bez użycia java scriptu zmienić styl danego elemenu na zasadzie toggle po akcji
      w tym przypadku po zaznaczeniu checkboxa, który jest ukryty pod przyciskiem od menu
-  */
+     nie jest to zrobione w js poniewaz tak jest prosciej :)  
+ */
 
 #hamburgerCheckbox:checked~.hamburger-lines .line1 {
   transform: rotate(45deg);
@@ -65,4 +66,4 @@
 
 #hamburgerCheckbox:checked~.hamburger-lines .line3 {
   transform: rotate(-45deg);
-}
+} 

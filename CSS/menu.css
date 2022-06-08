@@ -1,62 +1,70 @@
-
+/*cały panel nawigacji lacznie z logiem*/
 header {
     position: sticky;
     width: 100%;
-    top: 0;display: flex;
+    top: 0;
+    display: flex;
     align-items: center;
-     /*space-between - pierwszy do lewej ostatni do prawej*/
     justify-content: space-between;
     background-color: var(--secondaryColor);
-    /* color: var(--primaryColor); */
     padding: 0 1%;
-/* height: 10%; */}
-#logo{
-     display: block; 
-   
 }
-#logo img{
+
+/*nav zawiera całe menu*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: column; */
+    position: sticky;
+}
+
+
+/*cała nieuporządkowana lista (ul) z nawigacją*/
+.navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+/*wszystkie elementy list (li) dziedzące po navBar*/
+nav li {
+    width: 100%;
+    list-style: none;
+}
+
+/*wszystkie przyciski i linki do innych stron*/
+.navButton {
+    display: block;
+    text-decoration: none;
+    padding: 25px 39px;
+    transition: 0.3s;
+    color: var(--actionColor);
+}
+
+.navButton:hover {
+    box-shadow: 0 4px 0px var(--primaryColor);
+    transform: translate(0px, -10px);
+    color: var(--primaryColor);
+}
+
+#logo {
+    display: block;
+}
+
+#logo img {
     display: block;
     width: 100%;
 }
 
-/*nav zawiera cały panel nawigacji*/
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-/* flex-direction: column; */position: sticky;}
-
-nav {}
-
-/*cała nieuporządkowana lista (ul) z nawigacją*/
-.navBar{
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    flex-direction: row;
-    /**/
-    z-index: 1;
-    /* transition: 0.5s; */
-transition: 0.5s;}
-
-/*wszystkie elementy list (li) dziedzące po navBar*/
-nav li {
-    
-	width: 100%;
-	list-style: none;
+#logoutButton:hover {
+    box-shadow: 0 4px 0px red ;
+    transform: translate(0px, -10px);
 }
 
-/*wszystkie przyciski i linki do innych stron*/
-.navButton{
-    display: block;
-    text-decoration: none;
-    padding: 25px 39px;
-    /* font-size: 1.5rem; */
-    /* line-height: 1; */
-    transition: 0.3s;
-color: var(--actionColor);}
-
-.navButton:hover{
-     box-shadow: 0 4px 0px var(--primaryColor); 
-    /* padding: 3px 49px 21px; */
-transform: translate(0px, -10px);}
+#logoutButton {
+    color:red;
+}
