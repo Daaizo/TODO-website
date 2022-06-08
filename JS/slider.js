@@ -40,11 +40,9 @@
           settings:  "unslick",
           
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
       ]
     });
+    // odświeżanie na zmienianiu rozdzielczości okna zatrzymuje slider w miejscu
     $(window).resize(function(){
       $('.single-item')[0].slick.refresh();
     });

@@ -1,177 +1,223 @@
-@media screen and (min-width: 1000px ){
-    li{
+@media screen and (min-width: 1000px) {
+    li {
         width: unset !important;
     }
 }
 
-@media screen and (max-width: 1000px ) and (min-width :750px) and (min-height:450px){
+@media screen and (max-width: 1000px) and (min-width :750px) and (min-height:450px) {
 
-    #hamburger{
+    #hamburger {
         display: block;
     }
-    nav ,header{
-        font-size:140%;
-    /* position: sticky; */}
-    section,footer,aside{
-        font-size: 110%;
-      
-    }
-    .navBar{
-        transition: 0.5s;flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        position: fixed;
-       
-        top: 3.73rem;
-        background-color: var(--secondaryColor);
-        width: 161px;
-        /* transform: translate(1px, 481px); */right: -10.925rem;
-        height: 100%;
-        /* padding-top: 6%; */
-    }
-    .navButton:hover{
-          padding: 30px;
-    }
-    
-    .showNavigation{
-        right: 0rem;
-        /* top: 3rem; *//* transition: 0.2s; */
-      /* transform: translate(100%, 57px); */
-       box-shadow: -20px 0 40px rgba(0,0,0,0.3);
-}
-      
-    
-}
 
-@media screen  and (min-width: 350px)and (max-width: 750px) and (min-height:450px){
-    #hamburger{
-        display: block;
+    nav,
+    header {
+        font-size: 140%;
+        /* position: sticky; */
     }
-    nav ,header{
-        font-size:140%;
-    }
-    section,footer,aside{
+
+    section,
+    footer,
+    aside {
         font-size: 110%;
-      
-    position: fixed;}
-    .navBar{
+
+    }
+
+    .navBar {
+        transition: 0.5s;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
         position: fixed;
-       
+
+        top: 3.73rem;
+        background-color: var(--secondaryColor);
+        width: 161px;
+        /* transform: translate(1px, 481px); */
+        right: -10.925rem;
+        height: 100%;
+        /* padding-top: 6%; */
+    }
+
+    .navButton:hover {
+        padding: 30px;
+    }
+
+    .showNavigation {
+        right: 0rem;
+        /* top: 3rem; */
+        /* transition: 0.2s; */
+        /* transform: translate(100%, 57px); */
+        box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
+    }
+
+
+}
+
+@media screen and (min-width: 350px)and (max-width: 750px) and (min-height:450px) {
+    #hamburger {
+        display: block;
+    }
+
+    nav,
+    header {
+        font-size: 140%;
+    }
+
+    section,
+    footer,
+    aside {
+        font-size: 110%;
+
+        position: fixed;
+    }
+
+    .navBar {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        position: fixed;
+
         top: 3.7812rem;
         background-color: var(--secondaryColor);
-        
+
         right: -66rem;
         height: 034;
-        width: 100%;/* padding-top:9% ; */
+        width: 100%;
+        /* padding-top:9% ; */
     }
 
-ul.navBar.showNavigation {}
-    .navButton{
-          border-top: 1px solid black; 
+    .navButton {
+        border-top: 1px solid black;
     }
-    
-    .showNavigation{
+
+    .showNavigation {
         right: 0rem;
-        
-      /* overflow-x: visible; */}
-      
-    
+
+        /* overflow-x: visible; */
+    }
+
+
 }
-@media (max-width: 350px)  and (min-height:450px)
-{
-    *{
+
+@media (max-width: 350px) and (min-height:450px) {
+    * {
         font-size: 23px;
     }
 
-footer {
-    position: fixed;
+    footer {
+        position: fixed;
+    }
+
+    li {
+        width: 100%;
+        border: 1px solid aliceblue;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    header {
+        padding: 0;
+        position: unset;
+        /* width: 100%; */
+        /* top: 0; */
+    }
+
+    nav {
+        padding: 0;
+    }
+
+    .navButton {
+        padding: 1rem;
+    }
+
+    #logo {
+        display: none;
+    }
+
+    #hamburger {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .navBar {
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--secondaryColor);
+        height: 034;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        /* top: 0; */
+    }
+
 }
 
-li {
-    width: 100%;
-    border: 1px solid aliceblue;
-}
 
-header {
-    flex-direction: column;
-}
-
-header {
-    padding: 0;
-    position: unset;
-/* width: 100%; *//* top: 0; */}
-
-nav {
-    padding: 0;
-}
-.navButton {
-    padding: 1rem;
-}
-
-#logo {display: none;}
-
-#hamburger {display: none;}
-
-.hamburger {display: block;}
-
-.navBar {flex-direction: column;
-    align-items: center;
-    background-color: var(--secondaryColor);
-    height: 034;
-display: table;table-layout: fixed;width: 100%;/* top: 0; */}
-
-}
-
-
-@media (max-height: 450px) 
-{
-    *{
+@media (max-height: 450px) {
+    * {
         font-size: 23px;
     }
 
-footer {
-    position: fixed;
-}
+    footer {
+        position: fixed;
+    }
 
-li {
-    width: 100%;
-    border: 1px solid aliceblue;
-}
+    li {
+        width: 100%;
+        border: 1px solid aliceblue;
+    }
 
-header {
-    padding: 0;
-position: absolute;}
+    header {
+        padding: 0;
+        position: absolute;
+    }
 
-header {
-    /* padding: 0; */
-    top: 0;position: unset;
-}
+    header {
+        /* padding: 0; */
+        top: 0;
+        position: unset;
+    }
 
-nav {
-    padding: 0;
-}
-.navButton {
-    padding: 1rem;
-}
+    nav {
+        padding: 0;
+    }
 
-#logo {display: none;}
+    .navButton {
+        padding: 1rem;
+    }
 
-#hamburger {display: none;}
+    #logo {
+        display: none;
+    }
 
-.hamburger {display: block;}
+    #hamburger {
+        display: none;
+    }
 
-.navBar {width: 100%;min-width: 100%;/* position: fixed; *//* top: 0; */display: flex;flex-direction: column;
-    align-items: center;
-    background-color: var(--secondaryColor);
-    /* height: 10%; */
-justify-content: center;display: table;
-    table-layout: fixed;
-    width: 100%;}
+    .hamburger {
+        display: block;
+    }
 
-ul.navBar {}
-
+    .navBar {
+        width: 100%;
+        min-width: 100%;
+        /* position: fixed; */
+        /* top: 0; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--secondaryColor);
+        /* height: 10%; */
+        justify-content: center;
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+    }
 
 }
