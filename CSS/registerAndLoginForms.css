@@ -53,8 +53,6 @@
 }
 
 
-
-/* Full-width input fields */
 input[type=text],
 input[type=password] {
   width: 100%;
@@ -65,7 +63,6 @@ input[type=password] {
   background: #f1f1f1;
 }
 
-/* Add a background color when the inputs get focus */
 input[type=text]:focus,
 input[type=password]:focus {
   background-color: #ddd;
@@ -73,7 +70,6 @@ input[type=password]:focus {
 }
 
 .cancelButton {
-
   border-color: red;
   color: red;
 }
@@ -84,7 +80,6 @@ input[type=password]:focus {
 }
 
 .cancelButton:hover {
-
   /* border-color: red; */
   background-color: red;
   color: white;
@@ -93,7 +88,5 @@ input[type=password]:focus {
 .submitButton:hover {
   /* border-color: green; */
   background-color: green;
-  ;
-  ;
   color: white;
 }

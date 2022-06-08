@@ -45,9 +45,9 @@ body,html{
 .box{
   background-color: #ff737e;
   width: 100%;
-  height:40%;
+  height:max-content;
   padding: 3%;
-  display: flex;
+  
   font-size: 2rem;
   text-align: center;
   color: #fff;
@@ -64,13 +64,17 @@ body,html{
   font-size: 2rem;
   text-align: center;color: #fff;
   bottom: 0;
+  padding: 1.5%;
 }
 
 button{
     background-color: var(--primaryColor);
     border: 2px solid var(--secondaryColor);
     border-radius: 20px;
-    color: var(--secondaryColor);width: 40%;height: 3rem;margin: 3rem;}
+    color: var(--secondaryColor);
+    width: 40%;
+    height: 3rem;
+    margin: 2rem;}
 button:hover{
     background-color: var(--secondaryColor);
     color:var(--primaryColor)
@@ -97,14 +101,15 @@ button:hover{
     text-align: center;
     width: max-content;
     height: max-content;
-    text-align: auto;
     margin:5%;
     border : 1px solid var(--secondaryColor);
     border-radius: 8px;
-    padding: 2%;
+    padding: 10px;
     object-fit: cover;
   }
-
+  tbody{
+    margin:1%;
+  }
    #tableTitle  {
     border :none;
   }
