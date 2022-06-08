@@ -1,57 +1,89 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- Biblioteka JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Czcionka z darmowej strony https://fonts.google.com/ -->
+    <link href="https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap" rel="stylesheet">
+  
+
+    <!-- Moje plik -->
+    <link rel="icon" type="image/x-icon" href="http://localhost/DanielCharlak/ICONS/favicon.ico">
+    <link href="../CSS/style.css" rel="stylesheet" type="text/css">
+    <link href="../CSS/menu.css" rel="stylesheet" type="text/css">
+    <link href="../CSS/hamburger.css" rel="stylesheet" type="text/css">
+    <link href="../CSS/media.css" rel="stylesheet" type="text/css">
+    <script src="../JS/loginHandle.js" type="text/javascript"></script>
     <script language="JavaScript" type="text/javascript" src="../JS/functions.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap" rel="stylesheet"> <!-- Czcionka z darmowej strony https://fonts.google.com/ -->
-    <link href="../CSS/style.css" rel="stylesheet" type ="text/css"> <!-- Czcionka z darmowej strony https://fonts.google.com/ -->
-    <link href="../CSS/menu.css" rel="stylesheet" type ="text/css"> <!-- Czcionka z darmowej strony https://fonts.google.com/ -->
-    <link href="../CSS/hamburger.css" rel="stylesheet" type ="text/css"> <!-- Czcionka z darmowej strony https://fonts.google.com/ -->
-    <link href="../CSS/media.css" rel="stylesheet" type ="text/css"> <!-- Czcionka z darmowej strony https://fonts.google.com/ -->
-   
+
     <title> Project </title>
 </head>
 
 <body>
     <header>
-        <a href="#" id="logo">
-            <img  src="../ICONS/logo.png" alt="logo"  width="50" height="60">
+        <a href="http://localhost/DanielCharlak/HTML/login.html" id="logo">
+            <img src="../ICONS/logo.png" alt="logo" width="50" height="60">
         </a>
         <nav>
-           
-                <ul class="navBar">
-                    <li><a href="index.html" class="navButton">Podstawy</a></li>
-                    <li><a href="tabele.html"class="navButton">Tabele</a></li>
-                    <li><a href="formularze.html "class="navButton" >Pola formularza</a></li>
-                    <li><a href="obliczenia.html" class="navButton">Obliczenia w formularzu</a></li>
-                    <li><a href="kalkulator.html"class="navButton" >Kalkulatorek</a></li>
-                </ul>
+
+            <ul class="navBar">
+                <li><a href="index.html" class="navButton">Moje listy do zrobienia</a></li>
+                <li><a href="tabele.html" class="navButton">Moje konto</a></li>
+                <li><a href="formularze.html " class="navButton">Informacje o stronie</a></li>
+                <li><a href="obliczenia.html" class="navButton">Często zadawane pytania</a></li>
+                <li><a href="http://localhost/DanielCharlak/HTML/index.html" class="navButton"
+                        id="logoutButton">Wyloguj</a></li>
+            </ul>
         </nav>
-        
+
         <div id="hamburger">
-            <input class="checkbox" type="checkbox" id="hamburgerCheckbox"/>
+            <input class="checkbox" type="checkbox" id="hamburgerCheckbox" />
             <div class="hamburger-lines">
                 <span class="line line1"></span>
                 <span class="line line2"></span>
                 <span class="line line3"></span>
-              </div>
+            </div>
         </div>
     </header>
     <h1>Some stupid text</h1>
+    <h1>DANE LOGOWANIA</h1>
+    LOGIN<span id='login'> </span>
+    PASS<span id='password'> </span>
     <p>
-        I'm baby forage squid food truck, small batch sustainable tbh photo booth plaid pour-over gastropub austin chillwave XOXO. Sustainable subway tile tumeric 8-bit adaptogen, farm-to-table butcher. Stumptown crucifix pitchfork readymade meh craft beer typewriter bespoke 3 wolf moon whatever pinterest mixtape beard viral. Venmo everyday carry pinterest, mustache subway tile aesthetic scenester literally banh mi vaporware thundercats lumbersexual. Bespoke tonx shabby chic put a bird on it activated charcoal, photo booth celiac hexagon polaroid. Cronut knausgaard franzen sustainable hashtag deep v 8-bit tilde coloring book health goth leggings keytar. Roof party edison bulb venmo church-key lomo bespoke man bun DIY lumbersexual tumblr.
+        I'm baby forage squid food truck, small batch sustainable tbh photo booth plaid pour-over gastropub austin
+        chillwave XOXO. Sustainable subway tile tumeric 8-bit adaptogen, farm-to-table butcher. Stumptown crucifix
+        pitchfork readymade meh craft beer typewriter bespoke 3 wolf moon whatever pinterest mixtape beard viral. Venmo
+        everyday carry pinterest, mustache subway tile aesthetic scenester literally banh mi vaporware thundercats
+        lumbersexual. Bespoke tonx shabby chic put a bird on it activated charcoal, photo booth celiac hexagon polaroid.
+        Cronut knausgaard franzen sustainable hashtag deep v 8-bit tilde coloring book health goth leggings keytar. Roof
+        party edison bulb venmo church-key lomo bespoke man bun DIY lumbersexual tumblr.
 
-Venmo viral prism, praxis aesthetic vaporware tattooed activated charcoal enamel pin. Bespoke pok pok hammock raw denim, pop-up four loko authentic gochujang listicle. Chambray raclette farm-to-table, ethical kinfolk live-edge cliche. Shaman seitan hella tumeric truffaut, prism aesthetic occupy flannel retro lo-fi la croix dreamcatcher iPhone kale chips.
+        Venmo viral prism, praxis aesthetic vaporware tattooed activated charcoal enamel pin. Bespoke pok pok hammock
+        raw denim, pop-up four loko authentic gochujang listicle. Chambray raclette farm-to-table, ethical kinfolk
+        live-edge cliche. Shaman seitan hella tumeric truffaut, prism aesthetic occupy flannel retro lo-fi la croix
+        dreamcatcher iPhone kale chips.
 
-Occupy keytar XOXO whatever unicorn hashtag organic af man braid street art glossier. Banjo pickled freegan, activated charcoal vegan readymade +1 adaptogen migas fanny pack. Sartorial paleo polaroid organic. Church-key synth pop-up yes plz bicycle rights. Post-ironic paleo chillwave prism, blue bottle tousled blog.
+        Occupy keytar XOXO whatever unicorn hashtag organic af man braid street art glossier. Banjo pickled freegan,
+        activated charcoal vegan readymade +1 adaptogen migas fanny pack. Sartorial paleo polaroid organic. Church-key
+        synth pop-up yes plz bicycle rights. Post-ironic paleo chillwave prism, blue bottle tousled blog.
 
-Stumptown put a bird on it semiotics plaid master cleanse PBR&B swag glossier letterpress raclette pabst live-edge. Ennui butcher meditation la croix tbh austin. PBR&B truffaut direct trade tote bag, af humblebrag tonx lyft chia. Tumblr pok pok beard chambray raclette taxidermy. Aesthetic green juice blog, heirloom copper mug microdosing banjo enamel pin irony wayfarers. Raclette bicycle rights salvia waistcoat hoodie vice.
+        Stumptown put a bird on it semiotics plaid master cleanse PBR&B swag glossier letterpress raclette pabst
+        live-edge. Ennui butcher meditation la croix tbh austin. PBR&B truffaut direct trade tote bag, af humblebrag
+        tonx lyft chia. Tumblr pok pok beard chambray raclette taxidermy. Aesthetic green juice blog, heirloom copper
+        mug microdosing banjo enamel pin irony wayfarers. Raclette bicycle rights salvia waistcoat hoodie vice.
 
-Selfies intelligentsia franzen brunch gastropub. +1 fingerstache kogi mumblecore hot chicken kale chips tilde palo santo kitsch four loko disrupt. Woke drinking vinegar fixie, thundercats synth bespoke praxis everyday carry affogato. Af offal bushwick everyday carry venmo banh mi viral actually vexillologist kogi. Knausgaard wolf beard tofu ennui selvage forage sartorial. Cray adaptogen subway tile pok pok beard, yr salvia air plant marfa food truck hexagon migas. Hexagon freegan YOLO, lo-fi praxis letterpress beard.
+        Selfies intelligentsia franzen brunch gastropub. +1 fingerstache kogi mumblecore hot chicken kale chips tilde
+        palo santo kitsch four loko disrupt. Woke drinking vinegar fixie, thundercats synth bespoke praxis everyday
+        carry affogato. Af offal bushwick everyday carry venmo banh mi viral actually vexillologist kogi. Knausgaard
+        wolf beard tofu ennui selvage forage sartorial. Cray adaptogen subway tile pok pok beard, yr salvia air plant
+        marfa food truck hexagon migas. Hexagon freegan YOLO, lo-fi praxis letterpress beard.
 
-Dummy text? More like dummy thicc text, amirite?
+        Dummy text? More like dummy thicc text, amirite?
     </p>
 </body>
 <footer>
