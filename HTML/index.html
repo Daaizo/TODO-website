@@ -22,8 +22,11 @@
   <link href="../CSS/parallax.css" rel="stylesheet" type="text/css">
   <link href="../CSS/registerAndLoginForms.css" rel="stylesheet" type="text/css">
   <link href="../CSS/mediaFrontPage.css" rel="stylesheet" type="text/css">
+  <script src="../JS/classes.js" type="text/javascript"></script>
+  <script src="../JS/validation.js" type="text/javascript"></script>
   <script src="../JS/commentsFetch.js" type="text/javascript"></script>
   <script src="../JS/registAndLoginForm.js" type="text/javascript"></script>
+
 
   <title> TODO </title>
 </head>
@@ -33,11 +36,12 @@
     <img src="../ICONS/textLogo.png" alt="LOGO" id="textLogo" />
 
     <div class="box">
+      <h1>
       Witaj !
       Twórz i modyfiuj właśne zadania w ciągu sekund.
-      </br>
-      <button id="login">Zaloguj</button>
-      <button id="register">Zarejestruj sie</button>
+    </h2>
+      <button id="loginFrom">Zaloguj</button>
+      <button id="registerForm">Zarejestruj sie</button>
       <button id="loginWithoutAccount">Wypróbuj stronę bez logowania</button>
     </div>
   </div>
@@ -54,29 +58,31 @@
 
   <div id="form">
     <div class="formContent" id="registrationForm">
-      <form action="http://localhost/DanielCharlak/HTML/login.html" method="GET">
         <button class="close" title="Zamknij Formularz">&times;</button>
-        <h1>Sign Up</h1>
-        <p>Please fill in this form to create an account.</p>
+        <h1>Zarejestruj się</h1>
+        <p>Proszę wypełnij wszystkie pola poprawnymi danymi.</p>
         <hr>
         <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
+        <input type="text" placeholder="Wprowadź email" name="email" id="email" required>
+        <h5 id="emailError" class="errorText"></h5>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
+        <label for="login"><b>Login</b></label>
+        <input type="text" placeholder="Wprowadź login" name="login" id="login" required>
+        <h5 id="loginError" class="errorText"></h5> 
 
-        <label for="psw-repeat"><b>Repeat Password</b></label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-        <label>
-          <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-        </label>
+        <label for="password"><b>Hasło</b></label>
+        <input type="password" placeholder="Wprowadź hasło" name="psw" id="password" required>
+        <h5 id="passwordError" class="errorText"></h5> 
+
+        <label for="passwordRepeat"><b>Powtórz Hasło</b></label>
+        <input type="password" placeholder="Powtórz hasło" name="psw-repeat" id="passwordRepeat" required>
+      
         <p>Zakładając konto akceptujesz polite prywatności <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+      </br>
         <span class="formButtons">
-          <button class="cancelButton">Anuluj</button>
-          <button class="submitButton">Zarejestruj</button>
+          <button class="cancelButton" type="button">Anuluj</button>
+          <button class="submitButton" id="registerButton">Zarejestruj</button>
         </span>
-        <input type="submit" onClick="handleSumbit()"/>
-      </form>
     </div>
 
     <div class="formContent" id="loginForm">
@@ -86,17 +92,16 @@
         <hr>
         <i class="fa-duotone fa-right-from-bracket"></i>
         <label for="psw"><b>Login</b></label>
-        <input type="text" placeholder="Enter login" name="login" required>
+        <input type="text" placeholder="Enter login" name="login"  required>
 
         <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
+        <input type="password" placeholder="Enter Password" name="password"  required>
 
-      
+        <label>
           <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
         </label>
-        <p>Zakładając konto akceptujesz polite prywatności <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
         <span class="formButtons">
-          <button class="cancelButton">Anuluj</button>
+          <button class="cancelButton" type="button">Anuluj</button>
           <button class="submitButton" type="submit" onClick="handleSumbit()">Login</button>
         </span>
       </form>
