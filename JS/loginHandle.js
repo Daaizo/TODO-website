@@ -4,7 +4,7 @@
 //     item.price = document.getElementById("price").value;
 //     item.color = document.getElementById("color").value;
 //     item.quantity = document.getElementById("quantity").value;
-    
+
 //     var lista = JSON.parse(localStorage.getItem('listaUzytkownikow'))
 //     if (lista===null) lista=[]; 
 //     lista.push(item); 
@@ -48,7 +48,7 @@
 //         } 
 //         else deleteProducts();
 //     }
-    
+
 //     displayProducts();
 // }
 
@@ -64,7 +64,7 @@
 //     }
 // }
 // function saveEditedProduct(i){
-    
+
 
 
 //     if(  confirm("Zapisać edytowane dane dotyczące produktu "+ (i+1) +"?")){
@@ -73,13 +73,13 @@
 //         lista[i].price = document.getElementById("price").value;
 //         lista[i].color = document.getElementById("color").value;
 //         lista[i].quantity  = document.getElementById("quantity").value;
-       
-        
-       
+
+
+
 //         localStorage.setItem('listaProdutkow', JSON.stringify(lista));
 //         displayProducts();
 //     }
-  
+
 // }
 // function clearFields(){
 //     document.getElementById("name").value = "";
@@ -94,15 +94,15 @@
 //         el.innerHTML="<h2>Dane z localStorage</h2> <tr><td>Pusta lista produktów </td></tr>";
 //         return;
 //     }
-    
+
 //     var input =  document.getElementById("searchBar").value;
 //     var str="";
-    
+
 
 //     const regex = new RegExp(input); // testujemy wyrazenie dla /(to co wpisalismy)/ 
 //     for(i=0;i<lista.length;i++) {
 //         if(  (regex.test(lista[i].name)) || (regex.test(lista[i].price)) || (regex.test(lista[i].color)) || (regex.test(lista[i].color)) ){
-                
+
 //                     str+= "<tr><td><h4>Produkt nr "+ (i+1) + "   <button onclick='deleteProduct("+i+")'> usun produkt</button> "
 //                     + "  <button onclick='editProduct("+i+")'> edytuj produkt</button>" + 
 //                      "  <button onclick='saveEditedProduct("+i+")' id='editButton"+i+"' style='visibility :hidden'> zapisz edytowane dane</button></h4></td></tr>" ;
@@ -112,20 +112,20 @@
 //                     str+= "<tr><td> Ilosc: </td><td>" +lista[i].quantity +"</td></tr>";
 //             } 
 //         }
-        
+
 //         if(str.length) el.innerHTML="<h2>Dane z localStorage</h2>" + str;
 //         else el.innerHTML = "<h3>nie znaleziono żadnych produktów<h3>" ;
 //         document.getElementById("searchBar").value = "";
 //     }
 
 
- 
-window.addEventListener('load' , () => {
+
+window.addEventListener('load', () => {
     //search params - funkcja ktora pozwala na pobranie parametrow wysłanych przez GET
     //new URL(document.location) - lokacja dokumentu, nie trzeba wpisywac recznie https://localhost/ itd.
     const passedParams = (new URL(document.location)).searchParams;
     const login = passedParams.get('login');  // nazwy musza sie zgadzac z tymi, ktore sa w formularzy wysylajacym dane
-    const password = passedParams.get('password'); 
+    const password = passedParams.get('password');
     const rember = passedParams.get("remember");
     console.log("rember" + rember);
     document.getElementById('login').innerHTML = login;

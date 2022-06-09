@@ -37,8 +37,11 @@
         },
         {
           breakpoint: 350,
-          settings:  "unslick",
-          
+          settings: {
+          slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false
+          }
         }
       ]
     });
