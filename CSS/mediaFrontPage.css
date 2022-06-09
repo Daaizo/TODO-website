@@ -12,6 +12,14 @@
     
 }
 
+/* fix do chroma i innych przegladarek, tak aby wszedzie byl ten sam rozmaiar czcionki 
+    z jakiegos powodu w przegladarkach -webkit-min-device-pixel-ratio:0 o tej wlasnosci czcionka jest mniejsza o 4px
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+    body {
+      font-size: 330px;      
+      }
+  }
 @media screen  and (min-width: 350px)and (max-width: 750px) and (min-height:450px){
     button{
         margin: 1rem;
