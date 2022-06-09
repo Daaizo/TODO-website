@@ -124,11 +124,12 @@ window.addEventListener('load', () => {
     //search params - funkcja ktora pozwala na pobranie parametrow wysłanych przez GET
     //new URL(document.location) - lokacja dokumentu, nie trzeba wpisywac recznie https://localhost/ itd.
     const passedParams = (new URL(document.location)).searchParams;
-    const login = passedParams.get('login');  // nazwy musza sie zgadzac z tymi, ktore sa w formularzy wysylajacym dane
-    const password = passedParams.get('password');
-    const rember = passedParams.get("remember");
-    console.log("rember" + rember);
-    document.getElementById('login').innerHTML = login;
-    document.getElementById('password').innerHTML = password;
+    const login = passedParams.get('log');  // nazwy musza sie zgadzac z tymi, ktore sa w formularzy wysylajacym dane
+    if (login == null) {
+        document.getElementById('login').innerHTML = "Witaj gościu <br> możesz wypróbować wszystkie funkcjonalności ale nie zostaną one zapisane po twoim wyjściu ze strony !";
+    } else {
+        document.getElementById('login').innerHTML = login;
+    }
+
 })
 

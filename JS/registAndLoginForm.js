@@ -3,6 +3,7 @@
 $(document).ready(function () {
 
     $("#loginFrom").click(function () {
+        clearLoginForm();
         toggleBlurAndDisplayForm("block");
         $("#loginForm").css("display", "block");
         $("#registrationForm").css("display", "none");
@@ -13,6 +14,7 @@ $(document).ready(function () {
         toggleBlurAndDisplayForm("block");
         $("#registrationForm").css("display", "block");
         $("#loginForm").css("display", "none");
+        clearRegisterForm();
     });
 
     $('#loginWithoutAccount').on('click', function () {
@@ -44,42 +46,52 @@ $(document).ready(function () {
         const passwordRepeat = $('#passwordRepeat');
 
         if (isAllDataEntered(email, login, password, passwordRepeat)) {
-            console.log("dane sa wprowadzne ");
-
-
-            if (checkEmail() && checkLogin() && checkPassword() && checkIfPasswordsAreEqual()
-                //  && sprawdzBox("produkt") && sprawdzRadio("zaplata")
-            ) {
-
+            //if (checkEmail() && checkLogin() && checkPassword() && checkIfPasswordsAreEqual()) {
+            if (checkEmail() && checkLogin() && checkIfPasswordsAreEqual()) {
                 if (printDataFromRegister()) {
                     //jezeli uzytkownik zaakceptował wprowadzone dane to zarejestruj
-                    var listOfUsers = JSON.parse(localStorage.getItem('listOfUsers'))
-                    if (listOfUsers === null) listOfUsers = [];
-                        var user  ={};
-                        user.email = email.val();
-                        user.login = login.val();
-                        user.password = password.val();
-                        listOfUsers.push(user); 
-                        localStorage.setItem('listOfUsers', JSON.stringify(listOfUsers));
-                         alert("Konto zostalo stworzone teraz sie mozesz zalogowac");
-                  
+                    if (User.checkIfLoginIsUnique(login.val())) {
+
+                        const user = new User(login.val(), email.val(), password.val());
+                        user.addUserToStorage();
+                        toggleBlurAndDisplayForm("none");
+                    }
                 }
-
                 else console.log("odrzucenie danych");
-                return true;
             }
-            return false;
         }
-
     })
-
-
-
-
+    $("#sprawdz").click(function () {
+        const login = $('#log');
+        const password = $('#loginPas');
+        console.log(login + login.val());
+        console.log(User.checkIfUserExists(login.val(), password.val()));
+    });
 
 });
 
+function a() {
+    const login = $('#log');
+    const password = $('#loginPas');
+    return User.checkIfUserExists(login.val(), password.val());
 
+}
+function clearLoginForm() {
+    $('#log').val("");
+    $('#loginPas').val("");
+}
+function clearRegisterForm() {
+    $(".formContent h5").text("");
+
+    $('#email').val("");
+    $('#login').val("");
+    $('#password').val("");
+    $('#passwordRepeat').val("");
+    $('#email').removeClass("error");
+    $('#login').removeClass("error");
+    $('#password').removeClass("error");
+    $('#passwordRepeat').removeClass("error");
+}
 function toggleBlurAndDisplayForm(display) {
     $("#form").css("display", display);
     $(".parallax").toggleClass("blur");

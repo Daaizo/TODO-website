@@ -75,18 +75,18 @@ function sprawdzBox(boxName) {
 
 function checkPassword() {
     const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$&%^*()_+])(?=.*[0-9])(?=.*[a-z]).{6,20}$/;
-    //CO NAJMNIEJ 1 duża litera, jeden znak specjalny, 1 liczba,1 mala litera , 6-20 znaków
+    //CO NAJMNIEJ 1 duża litera, 1 znak specjalny, 1 liczba,1 mala litera , 6-20 znaków
+    // ?=.* czy ta czesc jest poprawana i cokolwiek dalej np. ^(?=.*[A-Z]).{1,20}$ czy w calym napisie, ktory ma 1-20 znakow jest duza litera, jest true. nie ma false 
     // https://rubular.com/r/gEmHAEm9wKr1Tj    <- regex checker
 
     const errorField = document.getElementById("passwordError");
     const field = document.getElementById("password");
     if (!checkField(field, passwordRegex)) {
-        errorField.innerHTML = "Poprawne hasło powinno zawierać Co najmniej 1 dużą litere, jeden znak specjalny, 1 liczbę ,1 malą litere , 6-20 znaków";
+        errorField.innerHTML = "Wpisz poprawne hasło!</br> Hasło powinno zawierać Co najmniej 1 dużą litere, jeden znak specjalny, 1 liczbę ,1 malą litere , 6-20 znaków";
         field.classList.add("error");
         return false;
     }
     else {
-        console.log("poprawne haslo");
         errorField.innerHTML = "";
         field.classList.remove("error");
         return true;
@@ -98,7 +98,7 @@ function checkEmail() {
     const errorField = document.getElementById("emailError");
     const field = document.getElementById("email");
     if (!checkField(field, emailRegex)) {
-        errorField.innerHTML = "Wpisz poprawny email!\n Email powininen zawierać znak @ i adres poczty np. jas@wp.pl";
+        errorField.innerHTML = "Wpisz poprawny email!</br>Email powininen zawierać znak @ i adres poczty np. jas@wp.pl";
         field.classList.add("error");
         return false;
     }
@@ -115,7 +115,7 @@ function checkLogin() {
     const errorField = document.getElementById("loginError");
     const field = document.getElementById("login");
     if (!checkField(field, loginRegex)) {
-        errorField.innerHTML = "Wpisz poprawny login! Login nie może zawierać spacji!";
+        errorField.innerHTML = "Wpisz poprawny login! </br> Login nie może zawierać spacji i musi zawierać przynajmniej 2 znaki";
         field.classList.add("error");
         return false;
     }
