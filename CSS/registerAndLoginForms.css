@@ -69,27 +69,9 @@ input[type=password]:focus {
   outline: none;
 }
 
-.cancelButton {
-  border-color: red;
-  color: red;
-}
 
-.submitButton {
-  border-color: green;
-  color: green;
-}
 
-.cancelButton:hover {
-  /* border-color: red; */
-  background-color: red;
-  color: white;
-}
 
-.submitButton:hover {
-  /* border-color: green; */
-  background-color: green;
-  color: white;
-}
 .error{
   border: 2px solid red !important;
 

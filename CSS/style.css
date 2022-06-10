@@ -23,8 +23,8 @@ body {
     /*czcionka strony jest ustawiona na 16px, używająć rem odwołujemy się do wartości czcionki dla całej strony
     , w tym przypadku 1 * 16px =16px, pozwala to zachować proporcje na całej stronie*/
 
-     margin: 0; 
-     padding: 0; 
+    margin: 0; 
+    padding: 0; 
     min-height: max-content;
     margin-bottom: 3rem;
 }
@@ -57,3 +57,114 @@ footer {
     /* clear: both; */
     /* margin-top: -50px; */
 }
+
+.content{
+    display: flex;
+    width: 100%;
+    margin: auto;
+    padding: 2%;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-around;
+    align-items: stretch;
+    font-size: 2rem;
+}
+#welcomeText{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+    margin-bottom: 70px;
+}
+
+button {
+    background-color: var(--primaryColor);
+    border: 2px solid var(--secondaryColor);
+    border-radius: 20px;
+    color: var(--secondaryColor);
+    width: 40%;
+    height: 3rem;
+    margin: 2rem;
+  }
+  
+  button:hover {
+    background-color: var(--secondaryColor);
+    color: var(--primaryColor)
+  }
+  .buttons {
+    width: 100%;
+    margin: auto;
+    font-size: 2rem;
+    text-align: center;
+    color: #fff;
+  }
+
+  .boxTODO{
+      display: flex;
+      flex-direction: row;
+  }
+  .boxTODO button{
+        height: max-content;
+        margin: 10px;
+    padding: 5px;
+  }
+  #tresc{
+      width: 100%;
+      margin: auto;
+      padding: 20px;
+  }
+td{
+    font-size: 1.5rem;
+
+  }
+  
+  #title,
+ #description {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+#description:focus,
+#title:focus {
+  background-color: #ddd;
+  outline: none;
+}
+td{
+    margin : 0;
+    width: max-content !important;
+}
+h5{
+    background-color: var(--secondaryColor);
+    font-size: 2rem;
+    color: var(--primaryColor);
+    text-align: center;
+    margin-top: 10px;
+
+}
+.cancelButton {
+    border-color: #ff4d4d;
+    color: #ff4d4d;
+  }
+  
+  .submitButton {
+    border-color: green;
+    color: green;
+  }.cancelButton:hover {
+    /* border-color: red; */
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  .submitButton:hover {
+    /* border-color: green; */
+    background-color: green;
+    color: white;
+  }
+  #checkAndRadio{
+      display: inline;
+      text-align: center;
+      
+  }

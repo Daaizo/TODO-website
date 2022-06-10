@@ -1,70 +1,69 @@
-@media screen and (min-width: 1000px ){
-    #textLogo{
+@media screen and (min-width: 1000px) {
+    #textLogo {
         width: unset;
     }
-  
-}
 
-@media screen and (max-width: 1000px ) and (min-width :750px) and (min-height:450px){
-
-
-      
-    
 }
 
 /* fix do chroma i innych przegladarek, tak aby wszedzie byl ten sam rozmaiar czcionki 
     z jakiegos powodu w przegladarkach -webkit-min-device-pixel-ratio:0 o tej wlasnosci czcionka jest mniejsza o 4px
 */
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
     body {
-      font-size: 330px;      
-      }
-  }
-@media screen  and (min-width: 350px)and (max-width: 750px) and (min-height:450px){
-    button{
+        font-size: 330px;
+    }
+}
+
+@media screen and (min-width: 350px)and (max-width: 750px) and (min-height:450px) {
+    button {
         margin: 1rem;
         font-size: 0.9rem;
         padding: 1px;
-        width: 90%;;
+        width: 90%;
+        ;
     }
+
     .parallax {
         height: 0;
         min-height: 80%;
     }
-   
 
-    
+
+
 }
-@media (max-width: 350px)  and (min-height:450px)
-{
-    *{
+
+@media (max-width: 350px) and (min-height:450px) {
+    * {
         font-size: 0.8rem;
     }
-   button{
-    width: 90%;;
-       margin: 1rem;
-       font-size: 0.9rem;
-       padding: 1px;
-   }
-   .parallax {
-    height: auto;
-    min-height: 40%;
-}
+
+    button {
+        width: 90%;
+        ;
+        margin: 1rem;
+        font-size: 0.9rem;
+        padding: 1px;
+    }
+
+    .parallax {
+        height: auto;
+        min-height: 40%;
+    }
+    .formButtons {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 250px){
-    .box2{
+    .box2 {
         display: none;
     }
-    .parallax{
+
+    .parallax {
         height: 100%;
         position: absolute;
     }
 }
-@media (max-height: 450px) 
-{
-   
 
-
-
-}
+@media (max-height: 450px) {}

@@ -70,20 +70,8 @@ html {
   bottom: 0;
   padding-bottom: 1%;
 }
-
-button {
-  background-color: var(--primaryColor);
-  border: 2px solid var(--secondaryColor);
-  border-radius: 20px;
-  color: var(--secondaryColor);
-  width: 40%;
-  height: 3rem;
-  margin: 2rem;
-}
-
-button:hover {
-  background-color: var(--secondaryColor);
-  color: var(--primaryColor)
+.box2 td{
+  font-size: 0.9rem;
 }
 
 .backgroundBox {

@@ -45,11 +45,14 @@ nav li {
     color: var(--actionColor);
 }
 
-.navButton:hover {
+.navButton:hover,.navivagionHoverLook {
     box-shadow: 0 4px 0px var(--primaryColor);
     transform: translate(0px, -10px);
     color: var(--primaryColor);
 }
+
+
+
 
 #logo {
     display: block;
@@ -61,10 +64,10 @@ nav li {
 }
 
 #logoutButton:hover {
-    box-shadow: 0 4px 0px red ;
+    box-shadow: 0 4px 0px red;
     transform: translate(0px, -10px);
 }
 
 #logoutButton {
-    color:red;
+    color: red;
 }
