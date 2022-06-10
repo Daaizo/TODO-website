@@ -13,9 +13,6 @@ function printDataFromRegister() {
     dane += "Login: " + document.getElementById('login').value + "\n";
     dane += "Hasło: " + document.getElementById('password').value + "\n";
 
-    //dane+="Produkty: "+zbierzDaneZCheckBox() +"\n";
-    // dane+="Sposób zapłaty: "+zbierzDaneZRadio() +"\n";
-    // dane+="Państwo: "+document.getElementById('panstwo').value +"\n";
     if (window.confirm(dane)) return true;
     else return false;
 }
@@ -32,43 +29,10 @@ function zbierzDaneZRadio() {
     return dane;
 
 }
-function zbierzDaneZCheckBox() {
-    var dane = "";
-    var obiekt = document.getElementsByName("produkt");
-    for (i = 0; i < obiekt.length; i++) {
-        if (obiekt[i].checked) dane += obiekt[i].value + " ";
-    }
-    return dane;
-}
+
 function checkField(field, regex) {
     if (!regex.test(field.value)) return (false);
     else return (true);
-}
-
-function sprawdzRadio(nazwa_radio) {
-    var obiekt = document.getElementsByName(nazwa_radio);
-    for (i = 0; i < obiekt.length; i++) {
-        wybrany = obiekt[i].checked;
-        if (wybrany) {
-            document.getElementById("zaplata_error").innerHTML = "";
-            return true;
-        }
-    }
-    document.getElementById("zaplata_error").innerHTML = "Wybierz sposób zapłaty !";
-    return false;
-}
-
-function sprawdzBox(boxName) {
-    var obiekt = document.getElementsByName(boxName);
-    for (i = 0; i < obiekt.length; i++) {
-        wybrany = obiekt[i].checked;
-        if (wybrany) {
-            document.getElementById("produkt_error").innerHTML = "";
-            return true;
-        }
-    }
-    document.getElementById("produkt_error").innerHTML = "Wybierz produkt !";
-    return false;
 }
 
 

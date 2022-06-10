@@ -1,16 +1,44 @@
 class Todo {
-    constructor(userLogin, title, description) {
-        this.userLogin = userLogin;
-        this.title = title;
-        this.description = description;
+    constructor(login) {
+        this.storageName = "TODOs";
+        this.setUserLogin(login);
+    }
+
+    setUserLogin(login) {
+        if (login == null) {
+            this.userLogin = "tempUser";
+        } else {
+            this.userLogin = login;
+        }
     }
 
 
+    addTODOtoStorage(data) {
+        
+        var list = JSON.parse(localStorage.getItem(this.storageName))
+        if (list == null) list = [];
+        list.push(data)
+        localStorage.setItem(this.storageName, JSON.stringify(list));
+    }
+   
 }
 
 
 
 
+function addTODO() {
+
+    if (login == null) login = "";
+    var item = {};
+    item.userLogin = login;
+    item.title = document.getElementById("title").value;
+    item.description = document.getElementById("description").value;
+    // item.color = document.getElementById("color").value;
+    // item.quantity = document.getElementById("quantity").value;
+    alert("Pomyslnie zapisano nowe TODO ");
+    displayTODOs();
+    return item;
+}
 
 
 
@@ -41,16 +69,16 @@ class User {
             alert("Login lub hasło się nie zgadza, spróbuj ponownie !");
             return false;
         }
-        return searchForUser(log,pass,allUsers);
+        return searchForUser(log, pass, allUsers);
     }
 
-    static checkIfLoginIsUnique(log){
+    static checkIfLoginIsUnique(log) {
         var allUsers = getLocalStorage();
         if (allUsers.length == 0) {
             return true;
         }
-        for(i=0;i<allUsers.length;i++) {
-            if(allUsers[i].login == log ){
+        for (i = 0; i < allUsers.length; i++) {
+            if (allUsers[i].login == log) {
                 alert("Użytkownik o podanym loginie istnieje, wybierz inny login i spróbuj ponownie");
                 return false;
 
@@ -60,21 +88,21 @@ class User {
     }
 }
 
-function searchForUser(login,password,array){
-   
+function searchForUser(login, password, array) {
+
     var lista = array;
-    if (lista==null) {
+    if (lista == null) {
         return false;
     }
-    for(i=0;i<lista.length;i++) {
-        if(lista[i].login == login ){
-            if( lista[i].password == password){
+    for (i = 0; i < lista.length; i++) {
+        if (lista[i].login == login) {
+            if (lista[i].password == password) {
                 return true;
             }
-            else{
+            else {
                 alert("Login lub hasło się nie zgadza, spróbuj ponownie !");
                 return false;
-            } 
+            }
         }
     }
     alert("Login lub hasło się nie zgadza, spróbuj ponownie !");
@@ -82,16 +110,16 @@ function searchForUser(login,password,array){
 }
 
 function getLocalStorage() {
-    try{
+    try {
         var listOfUsers = JSON.parse(localStorage.getItem('listOfUsers'))
         if (listOfUsers === null) listOfUsers = [];
         return listOfUsers;
     }
-    catch{
+    catch {
         console.error("nie udalo sie pobrac local storage");
         return false;
     }
-    
+
 }
 function updateLocalStorage(data) {
     try {
