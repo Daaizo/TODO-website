@@ -12,18 +12,16 @@ class Todo {
         }
     }
 
-
     addTODOtoStorage(data) {
         
         var list = JSON.parse(localStorage.getItem(this.storageName))
         if (list == null) list = [];
+        data.id = list.length;
         list.push(data)
         localStorage.setItem(this.storageName, JSON.stringify(list));
     }
    
 }
-
-
 
 
 function addTODO() {
@@ -33,9 +31,7 @@ function addTODO() {
     item.userLogin = login;
     item.title = document.getElementById("title").value;
     item.description = document.getElementById("description").value;
-    // item.color = document.getElementById("color").value;
-    // item.quantity = document.getElementById("quantity").value;
-    alert("Pomyslnie zapisano nowe TODO ");
+    alert("The new TODO id has been successfully saved");
     displayTODOs();
     return item;
 }
@@ -66,7 +62,7 @@ class User {
     static checkIfUserExists(log, pass) {
         var allUsers = getLocalStorage();
         if (allUsers.length === 0) {
-            alert("Login lub hasło się nie zgadza, spróbuj ponownie !");
+            alert("Login or password does not match, please try again!");
             return false;
         }
         return searchForUser(log, pass, allUsers);
@@ -79,7 +75,7 @@ class User {
         }
         for (i = 0; i < allUsers.length; i++) {
             if (allUsers[i].login == log) {
-                alert("Użytkownik o podanym loginie istnieje, wybierz inny login i spróbuj ponownie");
+                alert("A user with the same login exists, select another login and try again");
                 return false;
 
             }
@@ -100,12 +96,12 @@ function searchForUser(login, password, array) {
                 return true;
             }
             else {
-                alert("Login lub hasło się nie zgadza, spróbuj ponownie !");
+                alert("Login or password does not match, please try again!");
                 return false;
             }
         }
     }
-    alert("Login lub hasło się nie zgadza, spróbuj ponownie !");
+    alert("Login or password does not match, please try again!");
     return false;
 }
 
@@ -116,7 +112,7 @@ function getLocalStorage() {
         return listOfUsers;
     }
     catch {
-        console.error("nie udalo sie pobrac local storage");
+        console.error("failed to loadl local storage");
         return false;
     }
 
@@ -124,10 +120,10 @@ function getLocalStorage() {
 function updateLocalStorage(data) {
     try {
         localStorage.setItem('listOfUsers', JSON.stringify(data));
-        alert("Konto zostalo stworzone teraz sie mozesz zalogowac");
+        alert("The account has been created and now you can log in.");
     }
     catch {
-        alert("Nie udało się stworzyć konta");
+        alert("Failed to create account.");
     }
 
 }

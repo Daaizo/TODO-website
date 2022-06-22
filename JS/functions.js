@@ -5,15 +5,14 @@ $(document).ready(function () {
   const passedParams = (new URL(document.location)).searchParams;
   var login = passedParams.get('log');  // nazwy musza sie zgadzac z tymi, ktore sa w formularzy wysylajacym dane
   if (login == null) {
-    document.getElementById('welcomeText').innerHTML = "Witaj możesz wypróbować wszystkie funkcjonalności ale nie zostaną one przypisane do twojego konta!";
+    document.getElementById('welcomeText').innerHTML = "Hello you can try all features but they will not be assigned to your account! If you want them to be saved, you need to register. ";
   } else {
-    document.getElementById('welcomeText').innerHTML = "Witaj " + login + " !";
+    document.getElementById('welcomeText').innerHTML = "Hello " + login + " !";
   }
 
 
 
   const data = new Todo(login);
-  // zmiana checboxa na zaznaczony wlacza klase
   $("#hamburgerCheckbox").change(function () {
     $(".navBar").toggleClass("showNavigation", this.chacked);
   });
@@ -42,7 +41,7 @@ $(document).ready(function () {
   $("#deleteAllTODOs").click(function () {
     removoAllTODOsfromStorage(data.userLogin);
     $("#displayTODOs").click();
-    alert("Wszystkie todo usuniete");
+    alert("All todos removed");
   });
   $("#s").click(function () {
     searchForTODO(data.userLogin);
@@ -52,23 +51,20 @@ function removoAllTODOsfromStorage(login) {
   var list = JSON.parse(localStorage.getItem('TODOs'));
   for (let i = 0; i < list.length; i++) {
     if (list[i].userLogin == login) {
-
       if (list.length != 1) {
         list.splice(i, 1);
         i = 0;
       }
       else list.pop();
     }
-
   }
- 
   localStorage.setItem("TODOs", JSON.stringify(list));
 }
 function editTODO(i) {
   var list = JSON.parse(localStorage.getItem('TODOs'));
-  $(".todoTitle").val(list[i].title + "sadasd");
+  $(".todoTitle").val(list[i].title);
   document.getElementById("description").value = (list[i].description) + "";
-  alert("Popraw dane lub wpisz nowe i naćnisnij zielony przycisk 'zapisz edytowane dane '");
+  alert("Correct the data or enter new data and press the green 'save edited data' button");
   $("#displayTODOs").click();
 
 
@@ -77,30 +73,30 @@ function displayTODOs(login) {
   var lista = JSON.parse(localStorage.getItem('TODOs'));
   var el = document.getElementById('tresc');
   var str = "";
-  if (lista == null) el.innerHTML = str + "<tr><td>Nic tu nie ma .. Dodaj nowe TODO ! </td></tr>";
+  if (lista == null) el.innerHTML = str + "<tr><td>There is nothing here ... Add a new TODO!</td></tr>";
   else {
     for (i = 0; i < lista.length; i++) {
       if (lista[i].userLogin == login) {
-        if (lista[i].type == "Priorytetowe") str += "<tr id='last'><td><h5 style='background-color:yellow'>";
+        if (lista[i].type == "Priority") str += "<tr id='last'><td><h5 style='background-color:yellow'>";
         else str += "<tr id='last'><td><h5>"
-        str += "TODO id " + (i) + " </h5><span class='boxTODO' >  <button onclick='deleteTODO(" + i + ")' class='cancelButton'> usun TODO</button> "
-          + "  <button onclick='editTODO(" + i + ")'> edytuj TODO</button> " +
-          "  <button onclick='saveEditedTODO(" + i + ")' id='editButton" + i + "' class='submitButton'> zapisz edytowane todo</button></span></td></tr>";
-        str += "<tr><td  > Tytuł : " + lista[i].title + "</td></tr>";
-        str += "<tr ><td> Opis  : " + lista[i].description + "</td></tr>";
+        str += "TODO id " + (i) + " </h5><span class='boxTODO' >  <button onclick='deleteTODO(" + i + ")' class='cancelButton'> delete TODO</button> "
+          + "  <button onclick='editTODO(" + i + ")'>edit TODO</button> " +
+          "  <button onclick='saveEditedTODO(" + i + ")' id='editButton" + i + "' class='submitButton'> save edited todo</button></span></td></tr>";
+        str += "<tr><td  > Title : " + lista[i].title + "</td></tr>";
+        str += "<tr ><td> Description  : " + lista[i].description + "</td></tr>";
 
-        str += "<tr><td> Typ todo : " + lista[i].type + "</td></tr>";
-        str += "<tr><td> Tagi : " + lista[i].important + "</td></tr>";
+        str += "<tr><td> Todo type : " + lista[i].type + "</td></tr>";
+        str += "<tr><td> Tags : " + lista[i].important + "</td></tr>";
       }
     }
-    if (str == "") el.innerHTML = "Nic tu nie ma .. Dodaj nowe TODO ! ";
+    if (str == "") el.innerHTML = "There is nothing here ... Add a new TODO!";
     else el.innerHTML = str;
   }
 
 }
 
 function saveEditedTODO(i) {
-  if (confirm("Zapisać edytowane dane dotyczące TODO o id =  " + i + "?")) {
+  if (confirm("Zapisać edytowane dane dotyczące TODO o id=  " + i + "?")) {
     var lista = JSON.parse(localStorage.getItem("TODOs"));
     lista[i].title = document.getElementById("title").value;
     lista[i].description = document.getElementById("description").value;
@@ -116,7 +112,7 @@ function saveEditedTODO(i) {
 }
 function deleteTODO(i) {
   var lista = JSON.parse(localStorage.getItem("TODOs"));
-  if ((confirm("Usunąć TODO nr" + (i) + " ?"))) {
+  if ((confirm("Delete TODO nr" + (i) + " ?"))) {
     if (lista.length != 1) {
       lista.splice(i, 1);
     }
@@ -140,7 +136,7 @@ function searchForTODO(login) {
   var el = document.getElementById('tresc');
   var lista = JSON.parse(localStorage.getItem("TODOs"));
   if (lista == null) {
-    el.innerHTML = "<tr><td>Nic tu nie ma .. Dodaj nowe TODO ! </td></tr>";
+    el.innerHTML = "<tr><td>There is nothing here ... Add a new TODO!</td></tr>";
     return false;
   }
 
@@ -166,14 +162,15 @@ function searchForTODO(login) {
   document.getElementById("s").value = "";
 }
 
-function checkRadio(nazwa_radio) {
-  var obiekt = document.getElementsByName(nazwa_radio);
-  for (i = 0; i < obiekt.length; i++) {
-    wybrany = obiekt[i].checked;
-    if (wybrany) {
-      return obiekt[i].value;
+function checkRadio(radioName) {
+  var object = document.getElementsByName(radioName);
+  for (i = 0; i < object.length; i++) {
+    choosen = object[i].checked;
+    if (choosen) {
+      return object[i].value;
     }
   }
+  //TODO zamienić na alert z nowej klasy 
   alert("Wybierz typ TODO przez dodaniem !");
 
   return false;
@@ -181,10 +178,10 @@ function checkRadio(nazwa_radio) {
 
 
 function getCheckBoxData() {
-  var dane = "";
-  var obiekt = document.getElementsByName("TODOtype2");
-  for (i = 0; i < obiekt.length; i++) {
-    if (obiekt[i].checked) dane += obiekt[i].value + " ";
+  var data = "";
+  var object = document.getElementsByName("TODOtype2");
+  for (i = 0; i < object.length; i++) {
+    if (object[i].checked) data += object[i].value + " ";
   }
-  return dane;
+  return data;
 }
