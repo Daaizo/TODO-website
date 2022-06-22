@@ -127,7 +127,13 @@ table{
   table-layout: fixed;
 }
 
-
 td{
   word-wrap:break-word
+}
+.slider {
+  width: 50%;
+  margin: 100px auto;
+} 
+.slick-slide {
+  margin: 0px 20px;
 }
