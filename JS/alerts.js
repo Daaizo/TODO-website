@@ -1,46 +1,52 @@
-function displayWarningAlert(alertText) {
-  var div = document.getElementById("alerts");
-  div.style.opacity = "0";
-  var hmtlPosition = document.getElementById("alerts");
-  var html =
-    "<div class='alert success'><span class='closebtn' onclick='closeAlert()'>&times;</span> " +
-    "<strong>Warning!</strong> " +
-    alertText +
-    "</div>";
-  hmtlPosition.innerHTML = html;
-}
-function displayErrorAlert(alertText) {
-  var div = document.getElementById("alerts");
-  div.style.opacity = "0";
-  var hmtlPosition = document.getElementById("alerts");
-  var html =
-    "<div class='alert success'><span class='closebtn' onclick='closeAlert()'>&times;</span> " +
-    "<strong>Attention!</strong>" +
-    alertText +
-    "</div>";
-  hmtlPosition.innerHTML = html;
-}
-function displaySuccessAlert(alertText) {
-  var div = document.getElementById("alerts");
-  div.style.opacity = "1";
-  var hmtlPosition = document.getElementById("alerts");
-  var html =
-    "<div class='alert success'><span class='closebtn' onclick='closeAlert()'>&times;</span> " +
-    "<strong>Success!</strong> " +
-    alertText +
-    "</div>";
-  hmtlPosition.innerHTML = html;
-}
+$(document).ready(function () {
+  $("#w").click(() => {
+    createAlert("info", "some information");
+  });
+  $("#inf").click(() => {
+    createAlert("success", "some success");
+  });
+  $("#s").click(() => {
+    createAlert("", "some warning");
+  });
+  $(".jd #closeAll ").click(() => {
+    $("#alerts").fadeOut("slow", function () {});
+  });
+  $("#alerts").on("click", ".closebtn", function () {
+    hideAlert();
+  });
+});
 
-function closeAlert() {
-  var close = document.getElementsByClassName("closebtn");
-  for (let i = 0; i < close.length; i++) {
-    close[i].onclick = function () {
-      var div = document.getElementById("alerts");
-      div.style.opacity = "0";
-      setTimeout(function () {
-        div.style.display = "none";
-      }, 600);
-    };
+function createAlert(alertType, alertText) {
+  var alertHeader;
+  switch (alertType) {
+    case "info": {
+      alertHeader = "Warning!";
+      break;
+    }
+    case "warning": {
+      alertHeader = "Attention!";
+      break;
+    }
+    case "success": {
+      alertHeader = "Success!";
+      break;
+    }
+    default: {
+      alertType = "";
+      alertHeader = "Error";
+      break;
+    }
   }
+  $("#alerts")
+    .html(`<div class='alert ${alertType}'><span class='closebtn' >&times;</span>
+  <span class="alertHeader">${alertHeader}</span> ${alertText} </div> `);
+  $("#alerts").show();
+
+  setTimeout(function () {
+    // alert auto close
+    hideAlert();
+  }, 3500);
+}
+function hideAlert() {
+  $("#alerts").fadeOut(1000, function () {});
 }
