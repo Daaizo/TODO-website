@@ -20,7 +20,7 @@ function checkPassword() {
   const errorField = document.getElementById("passwordError");
   const field = document.getElementById("password");
   if (!checkField(field, passwordRegex)) {
-    displayWarningAlert(
+    createAlert("erorr",
       "Enter a valid password!</br> Password should contain at least 1 uppercase letter, 1 special character, 1 number, 1 lowercase letter, 6-20 characters"
     );
     field.classList.add("error");
@@ -38,7 +38,7 @@ function checkEmail() {
   const errorField = document.getElementById("emailError");
   const field = document.getElementById("email");
   if (!checkField(field, emailRegex)) {
-    displayWarningAlert(
+    createAlert("erorr",
       "Enter a valid email!</br>Email should contain the @ sign and an email address such as jas@gmail.com "
     );
     field.classList.add("error");
@@ -55,7 +55,7 @@ function checkLogin() {
   const errorField = document.getElementById("loginError");
   const field = document.getElementById("login");
   if (!checkField(field, loginRegex)) {
-    displayWarningAlert(
+    createAlert("erorr",
       "Enter a valid login! </br> The login must not contain spaces and must contain at least 2 characters"
     );
     field.classList.add("error");
@@ -98,7 +98,7 @@ function checkIfDataIsEntered(data, nazwaPola) {
   const dataValue = data.val();
   if (dataValue == "") {
     data.addClass("error");
-    alert("Enter data in  " + nazwaPola + " field");
+    createAlert("warning","Enter data in  " + nazwaPola + " field");
     return false;
   } else {
     data.removeClass("error");

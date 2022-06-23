@@ -1,16 +1,4 @@
 $(document).ready(function () {
-  $("#w").click(() => {
-    createAlert("info", "some information");
-  });
-  $("#inf").click(() => {
-    createAlert("success", "some success");
-  });
-  $("#s").click(() => {
-    createAlert("", "some warning");
-  });
-  $(".jd #closeAll ").click(() => {
-    $("#alerts").fadeOut("slow", function () {});
-  });
   $("#alerts").on("click", ".closebtn", function () {
     hideAlert();
   });

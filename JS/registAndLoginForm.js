@@ -14,11 +14,7 @@ $(document).ready(function () {
   });
 
   $("#loginWithoutAccount").on("click", function () {
-    try {
-      location.href = "http://localhost/DanielCharlak/HTML/login.html";
-    } catch {
-      console.alert("failed to navigate to user page");
-    }
+    location.href = "http://localhost/DanielCharlak/HTML/login.html";
   });
 
   // when form is open clicking outside the window closes the form
@@ -52,14 +48,9 @@ $(document).ready(function () {
       }
     }
   });
- 
-
-  
-  
- 
 });
 
-function a() {
+function passData() {
   const login = $("#log");
   const password = $("#loginPas");
   return User.checkIfUserExists(login.val(), password.val());
@@ -85,12 +76,8 @@ function toggleBlurAndDisplayForm(display) {
 }
 
 function closeFormIfClickedOutsideIt(event) {
-  try {
-    var form = document.getElementById("form"); 
-    if (event.target == form) {
-      toggleBlurAndDisplayForm("none");
-    }
-  } catch {
-    console.alert("failed to make the blurring effect");
+  var form = document.getElementById("form");
+  if (event.target == form) {
+    toggleBlurAndDisplayForm("none");
   }
 }

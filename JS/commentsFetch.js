@@ -2,8 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     fetch("https://jsonplaceholder.typicode.com/comments/")
         .then(response => response.json())
-        .then(json => printData(json))
-        .catch(console.error("Loading comments failed"));
+        .then(json => printData(json));
 });
 
 function printData(json) {
