@@ -51,11 +51,9 @@ footer {
     position: fixed;
     background-color: var(--secondaryColor);
     bottom: 0;
-    /* margin-bottom: 38rem; */
-    /* height: 50px; */
-    /* flex-shrink: 0; */
-    /* clear: both; */
-    /* margin-top: -50px; */
+   color:white;
+   font-size: 15px !important;
+   text-align: center;
 }
 
 .content{
@@ -167,4 +165,8 @@ h5{
       display: inline;
       text-align: center;
       
+  }
+  input[type="checkbox"],
+  input[type="radio"]{
+    margin-left: 10px;
   }
