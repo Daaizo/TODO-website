@@ -25,23 +25,26 @@
   <link href="/HTML-school-project/CSS/parallax.css" rel="stylesheet" type="text/css">
   <link href="/HTML-school-project/CSS/registerAndLoginForms.css" rel="stylesheet" type="text/css">
   <link href="/HTML-school-project/CSS/mediaFrontPage.css" rel="stylesheet" type="text/css">
+  <link href="/HTML-school-project/CSS/alerts.css" rel="stylesheet" type="text/css">
 
-  <script src="/HTML-school-project/JS/slider.js" type="text/javascript"></script>
-  <script src="/HTML-school-project/JS/classes.js" type="text/javascript"></script>
+
   <script src="/HTML-school-project/JS/validation.js" type="text/javascript"></script>
   <script src="/HTML-school-project/JS/commentsFetch.js" type="text/javascript"></script>
   <script src="/HTML-school-project/JS/registAndLoginForm.js" type="text/javascript"></script>
+  <script src="/HTML-school-project/JS/alerts.js" type="text/javascript"></script>
+  <script src="/HTML-school-project/JS/User.js" type="text/javascript"></script>
 
 
   <title> TODO </title>
 </head>
 
 <body>
+  <span id="alerts"></span>
+  <span id="fullScrAlert"></span>
   <div class="parallax">
     <img src="/HTML-school-project/ICONS/textLogo.png" alt="LOGO" id="textLogo" />
 
     <div class="box">
-
       Hello!
       Create and modify your own tasks in seconds. <br>
       <button id="loginFrom" type="button">Login</button>
@@ -54,7 +57,6 @@
     <div class='box2'>
       User reviews
       <section class="single-item slider" id="comments">
-
       </section>
     </div>
 
@@ -91,8 +93,8 @@
     </div>
 
     <div class="formContent" id="loginForm">
-      <form action="/HTML-school-project/HTML/login.html" method="GET" onsubmit="return a();">
-        <button class="close" title="Zamknij Formularz" type="button">&times;</button>
+      <form action="/HTML-school-project/user.html" method="GET" onsubmit="return a();">
+        <button class="close" title="Close Form" type="button">&times;</button>
         <h1>Login </h1>
         <p>Enter your login details</p><br>
         <hr>
@@ -112,4 +114,5 @@
     </div>
   </div>
 </body>
+
 </html>
