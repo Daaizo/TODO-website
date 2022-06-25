@@ -14,7 +14,7 @@ $(document).ready(function () {
   });
 
   $("#loginWithoutAccount").on("click", function () {
-    location.href = "/HTML-school-project/DanielCharlak/HTML/user.html";
+    location.href = "/HTML-school-project/user.html";
   });
 
   // when form is open clicking outside the window closes the form
@@ -36,7 +36,12 @@ $(document).ready(function () {
     const passwordRepeat = $("#passwordRepeat");
 
     if (isAllDataEntered(email, login, password, passwordRepeat)) {
-      if (checkEmail() && checkLogin() && checkPassword() && checkIfPasswordsAreEqual()) {
+      if (
+        checkEmail() &&
+        checkLogin() &&
+        checkPassword() &&
+        checkIfPasswordsAreEqual()
+      ) {
         printDataFromRegister();
       }
     }

@@ -2,40 +2,22 @@ $(document).ready(function () {
   $("#alerts").on("click", ".closebtn", function () {
     hideAlert();
   });
-
-  $("#w").click(() => {
-    createAlert("warning", "warninng");
-  });
-  $("#inf").click(() => {
-    createAlert("info", "ifno");
-  });
-  $("#s").click(() => {
-    createAlert("success", "succ");
-  });
-  $("#err").click(() => {
-    createAlert("", "err");
-  });
-  $("#strong").click(() => {
-    var dane = "Are you accepting the registration data you have entered:\n";
-    dane += "Email: " + document.getElementById("email").value + "\n";
-    dane += "Login: " + document.getElementById("login").value + "\n";
-    dane += "Password: " + document.getElementById("password").value + "\n";
-    fullScreenAlert();
-    
-  });
 });
-function fullScreenAlert(alertHtml, contentToBlur){
- 
-    $("#fullScrAlert").css("display", "block");
-    $(contentToBlur).toggleClass("blur");
-    $("#fullScrAlert").html(alertHtml );
-  
+
+function fullScreenAlert(alertHtml, contentToBlur) {
+  $("#fullScrAlert").css("display", "block");
+  $(contentToBlur).toggleClass("blur");
+  $("#fullScrAlert").html(alertHtml);
+}
+function hideFullScrAlert(contentToShow) {
+  $("#fullScrAlert").css("display", "none");
+  $(contentToShow).toggleClass("blur");
 }
 function createAlert(alertType, alertText) {
   var alertHeader;
   switch (alertType) {
     case "info": {
-      alertHeader = "Warning!";
+      alertHeader = " ";
       break;
     }
     case "warning": {
@@ -56,7 +38,7 @@ function createAlert(alertType, alertText) {
     .html(`<div class='alert ${alertType}'><span class='closebtn' >&times;</span>
   <span class="alertHeader">${alertHeader}</span> ${alertText} </div> `);
   $("#alerts").show();
- document.body.scrollTop = document.documentElement.scrollTop = 0;
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
   if (alertType != "") {
     // default red error
     setTimeout(function () {
@@ -67,5 +49,5 @@ function createAlert(alertType, alertText) {
 }
 
 function hideAlert() {
-  $("#alerts").fadeOut(1000, function () {});
+  $("#alerts").fadeOut(500, function () {});
 }

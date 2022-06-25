@@ -18,7 +18,10 @@ class User {
   static checkIfUserExists(log, pass) {
     var allUsers = getLocalStorage();
     if (allUsers.length === 0) {
-      createAlert("warning","Login or password does not match, please try again!");
+      createAlert(
+        "warning",
+        "Login or password does not match, please try again!"
+      );
       return false;
     }
     return searchForUser(log, pass, allUsers);
@@ -31,7 +34,8 @@ class User {
     }
     for (i = 0; i < allUsers.length; i++) {
       if (allUsers[i].login == log) {
-        createAlert("error",
+        createAlert(
+          "error",
           "A user with the same login exists, select another login and try again"
         );
         return false;
@@ -51,12 +55,15 @@ function searchForUser(login, password, array) {
       if (lista[i].password == password) {
         return true;
       } else {
-        createAlert("warning","Login or password does not match, please try again!");
+        createAlert(
+          "warning",
+          "Login or password does not match, please try again!"
+        );
         return false;
       }
     }
   }
-  createAlert("warning","Login or password does not match, please try again!");
+  createAlert("warning", "Login or password does not match, please try again!");
   return false;
 }
 
@@ -73,9 +80,12 @@ function getLocalStorage() {
 function updateLocalStorage(data) {
   try {
     localStorage.setItem("listOfUsers", JSON.stringify(data));
-    createAlert("success","The account has been created and now you can log in.");
+    createAlert(
+      "success",
+      "The account has been created and now you can log in."
+    );
   } catch {
-    createAlert("erorr","Failed to create account.");
+    createAlert("erorr", "Failed to create account.");
   }
 }
 function handleLogin() {
