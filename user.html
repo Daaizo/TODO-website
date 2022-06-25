@@ -5,16 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Biblioteka JQuery -->
+    <!-- JQuery lib -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <!-- Czcionka z darmowej strony https://fonts.google.com/ -->
+    <!-- https://fonts.google.com/ -->
     <link href="https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap" rel="stylesheet">
 
-
-    <!-- Moje plik -->
+    <!-- MY files -->
     <link rel="icon" type="image/x-icon" href="http://localhost/DanielCharlak/ICONS/favicon.ico">
-
     <link href="/HTML-school-project/CSS/style.css" rel="stylesheet" type="text/css">
     <link href="/HTML-school-project/CSS/menu.css" rel="stylesheet" type="text/css">
     <link href="/HTML-school-project/CSS/hamburger.css" rel="stylesheet" type="text/css">
@@ -31,72 +29,84 @@
 
 <body>
     <span id="alerts"></span>
-    <header>
-        <a href="http://localhost/DanielCharlak/HTML/login.html" id="logo">
-            <img src="/HTML-school-project/ICONS/logo.png" alt="logo" width="50" height="60">
-        </a>
-        <nav>
-            <ul class="navBar">
-                <li><a href="#" class="navButton" id="addTodo">Add new TODO</a></li>
-                <li><a href="#" class="navButton" id="displayTODOs">My TODOs</a></li>
-                <li><a href="#" class="navButton" id="myAccount">My account</a></li>
-                <li><a href="#" class="navButton" id="faq">FAQ</a></li>
-                <li><a href="http://localhost/DanielCharlak/HTML/index.html" class="navButton"
-                        id="logoutButton">Logout</a></li>
-            </ul>
-        </nav>
-        <div id="hamburger">
-            <input class="checkbox" type="checkbox" id="hamburgerCheckbox" />
-            <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
+    <span id="fullScrAlert"></span>
+    <span id="fullScrWraper">
+        <header>
+            <a href="#" id="logo">
+                <img src="/HTML-school-project/ICONS/logo.png" alt="logo" width="50" height="60">
+            </a>
+            <nav>
+                <ul class="navBar">
+                    <li><a href="#" class="navButton" id="addTodo">Add new TODO</a></li>
+                    <li><a href="#" class="navButton" id="displayTODOs">My TODOs</a></li>
+                    <li><a href="#" class="navButton" id="myAccount">My account</a></li>
+                    <li><a href="#" class="navButton" id="faq">FAQ</a></li>
+                    <li><a href="/HTML-school-project/user.html" class="navButton"
+                            id="logoutButton">Logout</a></li>
+                </ul>
+            </nav>
+            <div id="hamburger">
+                <input class="checkbox" type="checkbox" id="hamburgerCheckbox" />
+                <div class="hamburger-lines">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <span class='bigText' id="welcomeText"> </span>
+            <div id="addTodoDiv">
+                <br>
+                <h1 class="bigText"> Add a new TODO</h1>
+                <table id="addTodoTable">
+                    <tbody>
+                        <tr>
+                            <td>Title :</td>
+                            <td><input id="title" class="todoTitle" placeholder="enter title" required /></td>
+                        </tr>
+                        <tr>
+                            <td>Description : </td>
+                            <td><input id="description" placeholder="describe your task here"></td>
+                        </tr>
+                        <tr>
+                            <td>Todo type:</td>
+                            <td>
+                                <input type="radio" name="TODOtype" id="b" value="Not very important" />
+                                <label for="b"> Not very important</label>
+                                <input type="radio" name="TODOtype" id='a' value="Critical" />
+                                <label for="a"> Critical</label>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tags : </td>
+                            <td><input type="checkbox" id="homework" name="TODOtype2" value="#homework">
+                                <label for="homework"> homework</label>
+                                <input type="checkbox" id="test" name="TODOtype2" value="#test">
+                                <label for="test"> test</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <div class="buttons">
+                    <button id="saveTodo">Save new todo</button>
+                    <button id="deleteAllTODOs" class="cancelButton">Delete all todos </button>
+                </div>
             </div>
         </div>
-    </header>
-
-    <div class="content">
-        <span id='welcomeText'> </span>
-        Add a new TODO
-        <table>
-            <tbody>
-                <!-- <input type="text" id="s"  placeholder="Szukaj TODO  "  title="Wpisz tytuł lub dowolną częśc opisu"/>
-                 <button >Szukaj </button> -->
-                <tr>
-                    <td>Title :</td>
-                    <td><input id="title" class="todoTitle" placeholder="enter title" required /></td>
-                </tr>
-                <tr>
-                    <td>Description : </td>
-                    <td><textarea id="description" placeholder="describe your task here"></textarea></td>
-                </tr>
-                <tr >
-                    <td>Todo type:</td>
-                    <td > 
-                    <input type="radio" name="TODOtype" id="b" value="Not very important" />
-                    <label for="b"> Not very important</label>
-                    <input type="radio" name="TODOtype" id='a' value="Critical" />
-                    <label for="a"> Critical</label>
-                    <input type="checkbox" id="homework" name="TODOtype2" value="#homework">
-                    <label for="homework"> homework</label>
-                    <input type="checkbox" id="test" name="TODOtype2" value="#test">
-                    <label for="test"> test</label>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-       
-
-        <div class="buttons">
-            <button id="saveTodo">Save new todo</button>
-            <button id="deleteAllTODOs" class="cancelButton">Delete all todos </button>
+        <div id="todosDiv">
+            <span id="todos"></span>
         </div>
 
-        <table id="tresc"></table>
-    </div>
-    <footer>
-        Project made for educational purposes only. Author Daniel Charlak
-    </footer>
+
+        <footer>
+            Project made for educational purposes only. Author Daniel Charlak
+        </footer>
+    </span>
 </body>
 
 </html>
