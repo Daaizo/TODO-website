@@ -8,12 +8,9 @@
   top: 20px;
   right: 25px;
   position: absolute;
-
   display: block;
   z-index: 5;
-  /* jest wyświetlany nad elementami o mniejszym priorytecie*/
   opacity: 0;
-  /* wyłączenie widoczności elementu*/
   cursor: pointer;
 }
 
@@ -23,7 +20,6 @@
   top: 17px;
   right: 25px;
   position: absolute;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -51,11 +47,6 @@
   transition: transform 0.4s;
 }
 
-/* ~  pozwala bez użycia java scriptu zmienić styl danego elemenu na zasadzie toggle po akcji
-     w tym przypadku po zaznaczeniu checkboxa, który jest ukryty pod przyciskiem od menu
-     nie jest to zrobione w js poniewaz tak jest prosciej :)  
- */
-
 #hamburgerCheckbox:checked~.hamburger-lines .line1 {
   transform: rotate(45deg);
 }
@@ -66,4 +57,4 @@
 
 #hamburgerCheckbox:checked~.hamburger-lines .line3 {
   transform: rotate(-45deg);
-} 
+}

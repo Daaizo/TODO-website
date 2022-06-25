@@ -12,8 +12,6 @@
   padding-top: 110px;
 }
 
-
-
 #registrationForm {
   display: none;
 }
@@ -21,7 +19,6 @@
 #loginForm {
   display: none;
 }
-
 
 .formContent {
   background-color: var(--primaryColor);
@@ -34,7 +31,6 @@
   flex-direction: row;
   justify-content: center;
 }
-
 
 .close {
   background-color: transparent;
@@ -56,9 +52,8 @@
   cursor: pointer;
 }
 
-
-input[type=text],
-input[type=password] {
+input[type="text"],
+input[type="password"] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 10px 0;
@@ -67,18 +62,14 @@ input[type=password] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus,
-input[type=password]:focus {
+input[type="text"]:focus,
+input[type="password"]:focus {
   background-color: #ddd;
   outline: none;
 }
 
-
-
-
 .error {
   border: 2px solid red !important;
-
 }
 
 .errorText {

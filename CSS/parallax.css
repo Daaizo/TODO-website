@@ -7,7 +7,7 @@ html {
 }
 
 .parallax {
-  background-image: url('../ICONS/background.jpg');
+  background-image: url("../ICONS/background.jpg");
   min-height: 100%;
   height: 100%;
   background-attachment: fixed;
@@ -16,18 +16,11 @@ html {
   background-size: cover;
   box-sizing: border-box;
   background-origin: border-box;
-  ;
   overflow: hidden;
 }
 
-.blur {
-  filter: blur(1rem);
-
-  margin: 0;
-}
-
 .background2 {
-  background-image: url('../ICONS/wp11144495-minimalist-4k-blue-wallpapers.jpg');
+  background-image: url("../ICONS/wp11144495-minimalist-4k-blue-wallpapers.jpg");
   width: 1080px;
   height: 1280px;
   background-repeat: no-repeat;
@@ -43,13 +36,11 @@ html {
   padding: 10%;
 }
 
-
 .box {
   background-color: #ff737e;
   width: 100%;
   height: max-content;
   padding: 3%;
-
   font-size: 2rem;
   text-align: center;
   color: #fff;
@@ -70,7 +61,7 @@ html {
   bottom: 0;
   padding-bottom: 1%;
 }
-.box2 td{
+.box2 td {
   font-size: 0.9rem;
 }
 
@@ -83,8 +74,6 @@ html {
   margin: auto;
   margin-top: 100px;
 }
-
-
 
 #comments {
   display: block;
@@ -123,17 +112,17 @@ table td #largeTd {
   width: fit-content;
 }
 
-table{
+table {
   table-layout: fixed;
 }
 
-td{
-  word-wrap:break-word
+td {
+  word-wrap: break-word;
 }
 .slider {
   width: 50%;
   margin: 100px auto;
-} 
+}
 .slick-slide {
   margin: 0px 20px;
 }

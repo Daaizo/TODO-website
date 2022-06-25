@@ -1,122 +1,119 @@
-/* Klasa odnosząca się do całego dokumentu HTML
-    -- "globalne" zmienne, których możemy używać z funkcją var()
-    raz zdefiniowane mogą zostać użyte także w innych plikach css
- */
 * {
-
-    --primaryColor: #b4cfea;
-    --secondaryColor: #4d56b9;
-    --actionColor: #009FFF;
-    font-size: 14px;
-    font-family: 'Nuosu SIL', serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  --primaryColor: #b4cfea;
+  --secondaryColor: #4d56b9;
+  --actionColor: #009fff;
+  font-size: 14px;
+  font-family: "Nuosu SIL", serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-
 body {
-    background-color: var(--primaryColor);
-    color: var(--secondaryColor);
-    /* odwołanie się już ustawione koloru pierwszoplanowego */
-     font-size: 1.5rem; 
-    /*czcionka strony jest ustawiona na 16px, używająć rem odwołujemy się do wartości czcionki dla całej strony
-    , w tym przypadku 1 * 16px =16px, pozwala to zachować proporcje na całej stronie*/
-
-    margin: 0; 
-    padding: 0; 
-    min-height: max-content;
-    margin-bottom: 3rem;
+  background-color: var(--primaryColor);
+  color: var(--secondaryColor);
+  font-size: 1.5rem;
+  margin: 0;
+  padding: 0;
+  min-height: max-content;
+  margin-bottom: 3rem;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
-    width: 0.50rem;
+  width: 0.5rem;
 }
 
-/*kolor tła scrolla */
 body::-webkit-scrollbar-track {
-    background: var(--primaryColor);
-    
+  background: var(--primaryColor);
 }
 
-/*kolor  scrolla */
 body::-webkit-scrollbar-thumb {
-    /*kolor całego scrolla */
-    background: var(--secondaryColor);
-    border-radius: 8em;
+  background: var(--secondaryColor);
+  border-radius: 8em;
 }
-
+tr#last {
+  height: 30%;
+}
 footer {
-    width: 100%;
-    position: fixed;
-    background-color: var(--secondaryColor);
-    bottom: 0;
-   color:white;
-   font-size: 15px !important;
-   text-align: center;
+  width: 100%;
+  position: fixed;
+  background-color: var(--secondaryColor);
+  bottom: 0;
+  color: white;
+  font-size: 15px !important;
+  text-align: center;
 }
 
-.content{
-    display: flex;
-    width: 100%;
-    margin: auto;
-    padding: 2%;
-    flex-direction: column;
-    align-content: center;
-    justify-content: space-around;
-    align-items: stretch;
-    font-size: 2rem;
+.content {
+  display: flex;
+  width: 100%;
+  margin: auto;
+  padding: 2%;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-around;
+  align-items: stretch;
+  font-size: 2rem;
 }
-#welcomeText{
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bolder;
-    margin-bottom: 70px;
+
+.bigText {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bolder;
+  margin-bottom: 70px;
 }
 
 button {
-    background-color: var(--primaryColor);
-    border: 2px solid var(--secondaryColor);
-    border-radius: 20px;
-    color: var(--secondaryColor);
-    width: 40%;
-    height: 3rem;
-    margin: 2rem;
-  }
-  
-  button:hover {
-    background-color: var(--secondaryColor);
-    color: var(--primaryColor)
-  }
-  .buttons {
-    width: 100%;
-    margin: auto;
-    font-size: 2rem;
-    text-align: center;
-    color: #fff;
-  }
+  background-color: var(--primaryColor);
+  border: 2px solid var(--secondaryColor);
+  border-radius: 20px;
+  color: var(--secondaryColor);
+  width: 40%;
+  height: 3rem;
+  margin: 2rem;
+  font-size: 1.3rem;
+}
 
-  .boxTODO{
-      display: flex;
-      flex-direction: row;
-  }
-  .boxTODO button{
-        height: max-content;
-        margin: 10px;
-    padding: 5px;
-  }
-  #tresc{
-      width: 100%;
-      margin: auto;
-      padding: 20px;
-  }
-td{
-    font-size: 1.5rem;
+button:hover {
+  background-color: var(--secondaryColor);
+  color: var(--primaryColor);
+}
 
-  }
-  
-  #title,
- #description {
+.buttons {
+  width: 100%;
+  margin: auto;
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+}
+
+.boxTODO {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1%;
+  width: 100%;
+}
+
+.boxTODO button {
+  height: unset;
+  margin: 1%;
+  padding: 1%;
+}
+
+#tresc {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
+td {
+  font-size: 1.5rem;
+}
+
+#title,
+#description {
   width: 100%;
   padding: 15px;
   margin: 5px 0 10px 0;
@@ -130,43 +127,88 @@ td{
   background-color: #ddd;
   outline: none;
 }
-td{
-    margin : 0;
-    width: max-content !important;
-}
-h5{
-    background-color: var(--secondaryColor);
-    font-size: 2rem;
-    color: var(--primaryColor);
-    text-align: center;
-    margin-top: 10px;
 
+td {
+  margin: 0;
+  width: max-content !important;
 }
+
+h5 {
+  background-color: var(--actionColor);
+  font-size: 2rem;
+  color: var(--secondaryColor);
+  text-align: center;
+  margin-top: 10px;
+}
+
 .cancelButton {
-    border-color: #ff4d4d;
-    color: #ff4d4d;
-  }
-  
-  .submitButton {
-    border-color: green;
-    color: green;
-  }.cancelButton:hover {
-    /* border-color: red; */
-    background-color: #ff4d4d;
-    color: white;
-  }
-  
-  .submitButton:hover {
-    /* border-color: green; */
-    background-color: green;
-    color: white;
-  }
-  #checkAndRadio{
-      display: inline;
-      text-align: center;
-      
-  }
-  input[type="checkbox"],
-  input[type="radio"]{
-    margin-left: 10px;
-  }
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.submitButton {
+  border-color: green;
+  color: green;
+}
+
+.cancelButton:hover {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: green;
+  color: white;
+}
+
+#checkAndRadio {
+  display: inline;
+  text-align: center;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  margin-left: 10px;
+}
+
+#addTodoDiv {
+  box-shadow: 0 0 15px 0 #90a0af;
+  width: 100%;
+}
+
+#addTodoTable {
+  width: 98%;
+  margin: 1%;
+}
+
+input#description {
+  height: 101px;
+}
+
+#todosDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+table.todoRow {
+  word-break: break-word;
+  width: 96%;
+  box-shadow: 0 0 15px 0 #90a0af;
+  margin: 2%;
+  padding: 1%;
+  border: solid var(--actionColor);
+  border-radius: 10px;
+}
+.blur {
+  filter: blur(1rem);
+  margin: 0;
+}
+table.todoRow tbody {
+  vertical-align: top;
+}
+span#todos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
