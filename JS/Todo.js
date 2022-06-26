@@ -1,6 +1,6 @@
 class Todo {
   static emptyListText =
-    "<span class='bigText'>There is nothing here ... Add a new TODO!";
+    "<span class='bigText' style='grid-column: 1/ span2;'>There is nothing here ... Add a new TODO!";
   constructor(login) {
     this.storageName = "TODOs";
     this.setUserLogin(login);
@@ -25,7 +25,7 @@ class Todo {
     createAlert("success", "The new TODO has been successfully saved");
   }
 }
-function removoAllTODOsfromStorage(login) {
+function removoAllUserTODOsfromStorage(login) {
   var list = JSON.parse(localStorage.getItem("TODOs"));
   for (let i = 0; i < list.length; i++) {
     if (list[i].userLogin == login) {
@@ -60,17 +60,27 @@ function displayTODOs(login) {
           i +
           ")'>edit TODO</button> " +
           "</span></td></tr>";
-        str += "<tr><td  > Title : " + lista[i].title + "</td></tr>";
         str +=
-          "<tr ><td> Description  : " + lista[i].description + "</td></tr>";
+          "<tr><td> Title : <span class='todoText'>" +
+          lista[i].title +
+          "</span></td></tr>";
+        str +=
+          "<tr ><td> Description  :  <span class='todoText'>" +
+          lista[i].description +
+          "</span></td></tr>";
 
-        str += "<tr><td> Todo type : " + lista[i].type + "</td></tr>";
-        str += "<tr><td> Tags : " + lista[i].important + "</td></tr></table>";
+        str +=
+          "<tr><td> Todo type :  <span class='todoText'>" +
+          lista[i].type +
+          "</span></td></tr>";
+        str +=
+          "<tr><td> Tags :  <span class='todoText'>" +
+          lista[i].important +
+          "</span></td></tr></table>";
       }
     }
     if (str == "") el.innerHTML = Todo.emptyListText;
     else el.innerHTML = str;
-    console.log(str);
   }
 }
 function editTODO(i) {
@@ -79,15 +89,15 @@ function editTODO(i) {
     $("#addTodoTable").html() +
     " </div></br><button class='submitButton' id='acceptEdit' onclick='saveEditedTODO(" +
     i +
-    ")'>save edited todo</button> <button id='notAcceptEdit' class='cancelButton'>no</button>";
-  console.log(htmlData);
+    ")'>save edited todo</button> <button id='notAcceptEdit' class='cancelButton'>cancel</button>";
   fullScreenAlert(htmlData, "#fullScrWraper");
   var list = JSON.parse(localStorage.getItem("TODOs"));
   $(".todoTitle").val(list[i].title);
   $("#description").val(list[i].description);
   const todoType = checkRadio("TODOtype");
-  if (todoType == "Not very important")
-    $("input:radio[name=TODOtype]")[0].checked = true;
+  console.log(checkRadio("TODOtype"));
+  console.log(todoType);
+  if (todoType == "Not very important") $("input:radio[name=TODOtype]")[0].checked = true;
   else $("input:radio[name=TODOtype]")[1].checked = true;
 
   createAlert(
@@ -129,16 +139,6 @@ function confirmedDelete(i) {
   displayTODOs(login);
 }
 
-function clearFields() {
-  document.getElementById("title").value = "";
-  document.getElementById("description").value = "";
-  const TODOtype = document.getElementsByName("TODOtype");
-  TODOtype.checked = false;
-  $("#homework").removeAttr("checked");
-  $("#test").removeAttr("checked");
-  $("input[type=radio]").prop("checked", false);
-  $("input[type=checkbox]").prop("checked", false);
-}
 function searchForTODO(login) {
   var el = document.getElementById("tresc");
   var lista = JSON.parse(localStorage.getItem("TODOs"));
@@ -183,7 +183,7 @@ function searchForTODO(login) {
 function checkRadio(radioName) {
   var object = document.getElementsByName(radioName);
   for (i = 0; i < object.length; i++) {
-    choosen = object[i].checked;
+    var choosen = object[i].checked;
     if (choosen) {
       return object[i].value;
     }

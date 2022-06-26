@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#alerts").on("click", ".closebtn", function () {
+  $("#alerts").on("click", ".closebtn", ()=> {
     hideAlert();
   });
 });
@@ -8,6 +8,7 @@ function fullScreenAlert(alertHtml, contentToBlur) {
   $("#fullScrAlert").css("display", "block");
   $(contentToBlur).toggleClass("blur");
   $("#fullScrAlert").html(alertHtml);
+  document.body.scrollTop = document.documentElement.scrollTop = 0;
 }
 function hideFullScrAlert(contentToShow) {
   $("#fullScrAlert").css("display", "none");
@@ -49,5 +50,5 @@ function createAlert(alertType, alertText) {
 }
 
 function hideAlert() {
-  $("#alerts").fadeOut(500, function () {});
+  $("#alerts").fadeOut(200, function () {});
 }

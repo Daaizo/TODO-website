@@ -1,51 +1,36 @@
 $(document).ready(function () {
   $("#addTodo").addClass("navivagionHoverLook"); // it opens first
   $("#addTodo").click(() => {
-    showAddTodo();
+    showContentAndHideElse(".content");
     clearFields();
-    $(".navBar").toggleClass("showNavigation", this.chacked);
-    removeHoverFromNavBar();
-    $("#addTodo").addClass("navivagionHoverLook");
+    toggleHoverOnPressedButton("#addTodo");
   });
   $("#displayTODOs").click(() => {
-    hideAddTodo();
-    $(".navBar").toggleClass("showNavigation", this.chacked);
-    removeHoverFromNavBar();
-    $("#displayTODOs").addClass("navivagionHoverLook");
+    showContentAndHideElse("#todosDiv");
+    toggleHoverOnPressedButton("#displayTODOs");
     displayTODOs(data.userLogin);
   });
   $("#myAccount").click(() => {
-    removeHoverFromNavBar();
-    $(".navBar").toggleClass("showNavigation", this.chacked);
-    $("#myAccount").addClass("navivagionHoverLook");
+    showContentAndHideElse("#accountDetailsDiv");
+    toggleHoverOnPressedButton("#myAccount");
+    printUserData(getUserData(login));
   });
-  $("#faq").click(() => {
-    removeHoverFromNavBar();
-    $(".navBar").toggleClass("showNavigation", this.chacked);
-    $("#faq").addClass("navivagionHoverLook");
+  $("#projectDetails").click(() => {
+    showContentAndHideElse("#projectDetailsDiv");
+    toggleHoverOnPressedButton("#projectDetails");
   });
   $("#logoutButton").click(() => {
     removeHoverFromNavBar();
     $(".navBar").toggleClass("showNavigation", this.chacked);
+    window.location.href = 'https://daaizo.github.io/HTML-school-project/';
+    return false;
   });
 
-  const passedParams = new URL(document.location).searchParams;
-  var login = passedParams.get("log");
-  if (login == null) {
-    $("#welcomeText").html(
-      "Hello guest you can try all features but they will not be assigned to your account! If you want them to be saved, you need to register. "
-    );
-    $("#logoutButton").text("Exit");
-  } else {
-    $("#welcomeText").html("Hello " + login + " !");
-  }
-
-  const data = new Todo(login);
-  $("#hamburgerCheckbox").change(function () {
+  $("#hamburgerCheckbox").change(() => {
     $(".navBar").toggleClass("showNavigation", this.chacked);
   });
 
-  $("#saveTodo").click(function () {
+  $("#saveTodo").click(() => {
     if (!checkRadio("TODOtype")) {
       return;
     }
@@ -62,7 +47,7 @@ $(document).ready(function () {
     clearFields();
   });
 
-  $("#deleteAllTODOs").click(function () {
+  $("#deleteAllTODOs").click(() => {
     var dane =
       "<span class='bigText'>Are you sure you want to ALL TODOs ?</span> <br>";
     dane +=
@@ -70,38 +55,85 @@ $(document).ready(function () {
     fullScreenAlert(dane, "#fullScrWraper");
   });
 
-  $("#s").click(function () {
+  $("#s").click(() => {
     searchForTODO(data.userLogin);
   });
 
-  $("#fullScrAlert").on("click", "#acceptAllDeletion", function () {
-    removoAllTODOsfromStorage(data.userLogin);
+  $("#fullScrAlert").on("click", "#acceptAllDeletion", () => {
+    removoAllUserTODOsfromStorage(data.userLogin);
     createAlert("info", "All todos removed");
     hideFullScrAlert("#fullScrWraper");
   });
-  $("#fullScrAlert").on("click", "#notAcceptDeletion", function () {
+  $("#fullScrAlert").on("click", "#notAcceptDeletion", () => {
     hideFullScrAlert("#fullScrWraper");
   });
-  $("#fullScrAlert").on("click", "#acceptDeletion", function () {
+  $("#fullScrAlert").on("click", "#acceptDeletion", () => {
     hideFullScrAlert("#fullScrWraper");
   });
-  $("#fullScrAlert").on("click", "#notAcceptEdit", function () {
+  $("#fullScrAlert").on("click", "#notAcceptEdit", () => {
     hideFullScrAlert("#fullScrWraper");
   });
+
+  //data passed with GET
+  var login = getUserLogin();
+  if (login == null) {
+    $("#welcomeText").html(
+      "Hello guest you can try all features but they will not be assigned to your account! If you want them to be saved, you need to register. "
+    );
+    $("#logoutButton").text("Exit");
+  } else {
+    $("#welcomeText").html("Hello " + login + " !");
+  }
+  const data = new Todo(login);
+  ///
 });
 
+function clearFields() {
+  $("#title").val("");
+  $("#description").val("");
+  $("#homework").removeAttr("checked");
+  $("#test").removeAttr("checked");
+  $("input[type=radio]").prop("checked", false);
+  $("input[type=checkbox]").prop("checked", false);
+}
 function removeHoverFromNavBar() {
   $("#addTodo").removeClass("navivagionHoverLook");
   $("#displayTODOs").removeClass("navivagionHoverLook");
   $("#myAccount").removeClass("navivagionHoverLook");
-  $("#faq").removeClass("navivagionHoverLook");
+  $("#projectDetails").removeClass("navivagionHoverLook");
 }
 
-function hideAddTodo() {
+function hideAll() {
   $(".content").css("display", "none");
-  $("#todosDiv").css("display", "flex");
-}
-function showAddTodo() {
-  $(".content").css("display", "flex");
   $("#todosDiv").css("display", "none");
+  $("#accountDetailsDiv").css("display", "none");
+  $("#projectDetailsDiv").css("display", "none");
+}
+
+function showContentAndHideElse(divNameOrId) {
+  hideAll();
+  switch (divNameOrId) {
+    case ".content": {
+      $(".content").css("display", "flex");
+      break;
+    }
+    case "#todosDiv": {
+      $("#todosDiv").css("display", "flex");
+      break;
+    }
+    case "#accountDetailsDiv": {
+      $("#accountDetailsDiv").css("display", "block");
+      break;
+    }
+    case "#projectDetailsDiv": {
+      $("#projectDetailsDiv").css("display", "flex");
+      break;
+    }
+  }
+}
+
+function toggleHoverOnPressedButton(divNameOrId) {
+  $(".navBar").toggleClass("showNavigation", this.chacked);
+  removeHoverFromNavBar();
+  $(divNameOrId).addClass("navivagionHoverLook");
 }

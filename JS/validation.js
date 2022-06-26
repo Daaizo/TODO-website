@@ -26,7 +26,7 @@ function printDataFromRegister() {
     dane += "Login: " + document.getElementById("login").value + "<br>";
     dane += "Password: " + document.getElementById("password").value + "<br>";
     dane +=
-      "<button id='acceptRegister'>yes</button><button id='notAcceptRegister'>no</button>";
+      "<button id='acceptRegister' class='submitButton'>yes</button><button id='notAcceptRegister' class='cancelButton'>no</button>";
     fullScreenAlert(dane, ".formContent");
   }
 }
