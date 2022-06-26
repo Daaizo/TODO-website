@@ -88,44 +88,9 @@ button:hover {
   color: #fff;
 }
 
-.boxTODO {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 1%;
-  width: 100%;
-}
-
-.boxTODO button {
-  height: unset;
-  margin: 1%;
-  padding: 1%;
-}
-
-#tresc {
-  width: 100%;
-  margin: auto;
-  padding: 20px;
-}
 
 td {
   font-size: 1.5rem;
-}
-
-#title,
-#description {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 10px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-#description:focus,
-#title:focus {
-  background-color: #ddd;
-  outline: none;
 }
 
 td {
@@ -171,44 +136,42 @@ input[type="radio"] {
   margin-left: 10px;
 }
 
-#addTodoDiv {
-  box-shadow: 0 0 15px 0 #90a0af;
-  width: 100%;
-}
 
-#addTodoTable {
-  width: 98%;
-  margin: 1%;
-}
-
-input#description {
-  height: 101px;
-}
-
-#todosDiv {
-  display: flex;
-  flex-direction: column;
-}
-
-table.todoRow {
-  word-break: break-word;
-  width: 96%;
-  box-shadow: 0 0 15px 0 #90a0af;
-  margin: 2%;
+#accountDetailsTable{
+  margin: 5%;
   padding: 1%;
-  border: solid var(--actionColor);
-  border-radius: 10px;
+  width: 90%;
 }
+#accountDetailsDiv{
+  padding: 10%;
+}
+
 .blur {
   filter: blur(1rem);
   margin: 0;
 }
-table.todoRow tbody {
-  vertical-align: top;
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
 }
-span#todos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.error {
+  border: 2px solid red !important;
+}
+
+.errorText {
+  color: #f44336;
+  font-size: larger;
+  margin-bottom: 5px;
 }

@@ -110,7 +110,7 @@
 
 @media (max-width: 350px) and (min-height: 450px) {
   span#todos {
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   * {

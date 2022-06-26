@@ -14,7 +14,7 @@
 
 #fullScrAlert {
   display: none;
-  background-color: var(--actionColor);
+  background-color: var(--secondaryColor);
   z-index: 1000;
   padding: 62px;
   height: max-content;
