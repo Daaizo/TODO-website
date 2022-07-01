@@ -59,8 +59,8 @@ footer {
 
 .bigText {
   text-align: center;
-  font-size: 2rem;
-  font-weight: bolder;
+  font-size: 2rem !important;
+  font-weight: bolder !important;
   margin-bottom: 70px;
 }
 
@@ -89,8 +89,31 @@ button:hover {
 }
 
 
+
+#tresc {
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+}
+
 td {
   font-size: 1.5rem;
+}
+
+#title,
+#description {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 10px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+#description:focus,
+#title:focus {
+  background-color: #ddd;
+  outline: none;
 }
 
 td {
@@ -98,13 +121,7 @@ td {
   width: max-content !important;
 }
 
-h5 {
-  background-color: var(--actionColor);
-  font-size: 2rem;
-  color: var(--secondaryColor);
-  text-align: center;
-  margin-top: 10px;
-}
+
 
 .cancelButton {
   border-color: #ff4d4d;
@@ -146,9 +163,17 @@ input[type="radio"] {
   padding: 10%;
 }
 
+input#description {
+  height: 101px;
+}
+
+
 .blur {
   filter: blur(1rem);
   margin: 0;
+}
+table.todoRow tbody {
+  vertical-align: top;
 }
 
 input[type="text"],
@@ -174,4 +199,23 @@ input[type="password"]:focus {
   color: #f44336;
   font-size: larger;
   margin-bottom: 5px;
+}
+h5 {
+  background-color: var(--actionColor);
+  font-size: 2rem;
+  color: var(--secondaryColor);
+  text-align: center;
+  margin-top: 10px;
+}
+span#projectDetailsDiv {
+  margin-top: 3%;
+  font-size: 1.6rem;
+  padding: 10px;
+}
+#projectFeaturesList li {
+  margin: 1% 0 1% 5%;
+  font-size: 1.6rem;
+}
+#projectFeaturesList{
+  margin-bottom: 3%;
 }

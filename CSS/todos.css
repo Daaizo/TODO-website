@@ -1,24 +1,24 @@
-#addTodoDiv,#accountDetailsTable {
-    box-shadow: 0 0 15px 0 #90a0af;
-    width: 100%;
+#addTodoDiv,
+#accountDetailsTable {
+  box-shadow: 0 0 15px 0 #90a0af;
+  width: 100%;
+}
+.boxTODO {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1%;
+  width: 100%;
+}
 
-  }
-  .boxTODO {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 1%;
-    width: 100%;
-  }
+.boxTODO button {
+  height: unset;
+  margin: 1%;
+  padding: 1%;
+}
 
-  .boxTODO button {
-    height: unset;
-    margin: 1%;
-    padding: 1%;
-  }
-
-#title,
-#description {
+.title,
+.description {
   width: 100%;
   padding: 15px;
   margin: 5px 0 10px 0;
@@ -34,39 +34,48 @@
 }
 
 #addTodoTable {
-    width: 98%;
-    margin: 1%;
-  }
+  width: 98%;
+  margin: 1%;
+}
 
-  input#description {
-    height: 101px;
-  }
+input#description {
+  height: 101px;
+}
 
-  #todosDiv {
-    display: flex;
-    flex-direction: column;
-    padding: 3%;
-  }
+#todosDiv {
+  display: flex;
+  flex-direction: column;
+  padding: 3%;
+}
 
-  table.todoRow {
-    word-break: break-word;
-    width: 96%;
-    box-shadow: 0 0 15px 0 #90a0af;
-    margin: 2%;
-    padding: 1%;
-    border: solid var(--actionColor);
-    border-radius: 10px;
-  }
-  table.todoRow tbody {
-    vertical-align: top;
-  }
-  span#todos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-  }
-  span.todoText {
-    font-size: 1.4rem;
-    font-weight: 400;
-  }
+table.todoRow {
+  word-break: break-word;
+  width: 96%;
+  box-shadow: 0 0 15px 0 #90a0af;
+  margin: 2%;
+  padding: 1%;
+  border: solid var(--actionColor);
+  border-radius: 10px;
+}
+table.todoRow tbody {
+  vertical-align: top;
+}
+span#todos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+span.todoText {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+.regexMarkedText {
+  background: var(--secondaryColor);
+  color: var(--actionColor);
+  font-weight: bolder;
+  font-size: inherit;
+}
+.spannedRow {
+  grid-column: 1 / span2;
+}
