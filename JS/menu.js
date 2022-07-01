@@ -80,7 +80,7 @@ $(document).ready(function () {
 });
 
 function printProjectInfo(){
-  fetch('../projectInfo.html')
+  fetch('https://daaizo.github.io/HTML-school-project/projectInfo.html')
 .then(response => {
     if (!response.ok) {
         throw new Error("Txt loading error " + response.status);
