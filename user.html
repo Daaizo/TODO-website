@@ -12,19 +12,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Nuosu+SIL&display=swap" rel="stylesheet">
 
     <!-- MY files -->
-    <link rel="icon" type="image/x-icon" href="/HTML-school-project/ICONS/favicon.ico">
-    <link href="/HTML-school-project/CSS/style.css" rel="stylesheet" type="text/css">
-    <link href="/HTML-school-project/CSS/menu.css" rel="stylesheet" type="text/css">
-    <link href="/HTML-school-project/CSS/hamburger.css" rel="stylesheet" type="text/css">
-    <link href="/HTML-school-project/CSS/media.css" rel="stylesheet" type="text/css">
-    <link href="/HTML-school-project/CSS/alerts.css" rel="stylesheet" type="text/css">
-    <link href="/HTML-school-project/CSS/todos.css" rel="stylesheet" type="text/css">
+    <link rel="icon" type="image/x-icon" href="/HTML-school-projectICONS/favicon.ico">
+    <link href="/HTML-school-projectCSS/style.css" rel="stylesheet" type="text/css">
+    <link href="/HTML-school-projectCSS/menu.css" rel="stylesheet" type="text/css">
+    <link href="/HTML-school-projectCSS/hamburger.css" rel="stylesheet" type="text/css">
+    <link href="/HTML-school-projectCSS/media.css" rel="stylesheet" type="text/css">
+    <link href="/HTML-school-projectCSS/alerts.css" rel="stylesheet" type="text/css">
+    <link href="/HTML-school-projectCSS/todos.css" rel="stylesheet" type="text/css">
 
-    <script src="/HTML-school-project/JS/alerts.js" type="text/javascript"></script>
-    <script src="/HTML-school-project/JS/Todo.js" type="text/javascript"></script>
-    <script src="/HTML-school-project/JS/User.js" type="text/javascript"></script>
-    <script src="/HTML-school-project/JS/menu.js" type="text/javascript"></script>
-    <script src="/HTML-school-project/JS/validation.js" type="text/javascript"></script>
+    <script src="/HTML-school-projectJS/alerts.js" type="text/javascript"></script>
+    <script src="/HTML-school-projectJS/Todo.js" type="text/javascript"></script>
+    <script src="/HTML-school-projectJS/User.js" type="text/javascript"></script>
+    <script src="/HTML-school-projectJS/menu.js" type="text/javascript"></script>
+    <script src="/HTML-school-projectJS/validation.js" type="text/javascript"></script>
 
     <title> TODO </title>
 </head>
@@ -35,14 +35,14 @@
     <span id="fullScrWraper">
         <header>
             <a href="#" id="logo">
-                <img src="/HTML-school-project/ICONS/logo.png" alt="logo" width="50" height="60">
+                <img src="/HTML-school-projectICONS/logo.png" alt="logo" width="50" height="60">
             </a>
             <nav>
                 <ul class="navBar">
-                    <li><a href="#" class="navButton" id="addTodo">Add new TODO</a></li>
-                    <li><a href="#" class="navButton" id="displayTODOs">My TODOs</a></li>
-                    <li><a href="#" class="navButton" id="myAccount">My account</a></li>
-                    <li><a href="#" class="navButton" id="projectDetails">Project details</a></li>
+                    <li><a href="#" class="navButton" id="addTodoButton">Add new TODO</a></li>
+                    <li><a href="#" class="navButton" id="displayTODOsButton">My TODOs</a></li>
+                    <li><a href="#" class="navButton" id="myAccountButton">My account</a></li>
+                    <li><a href="#" class="navButton" id="projectDetailsButton">Project details</a></li>
                     <li><a href="" class="navButton"
                             id="logoutButton">Logout</a></li>
                 </ul>
@@ -101,7 +101,9 @@
             </div>
         </div>
         <div id="todosDiv">
-            <span id="todos"></span>
+            <input type="text" id="searchBar"  placeholder="Search for TODO ..  "  title="Type any word that todo contains "/>
+            <span id="todos">
+            </span>
         </div>
         <span id="accountDetailsDiv"></span>
         <span id="projectDetailsDiv"></span>
