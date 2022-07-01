@@ -1,23 +1,40 @@
 $(document).ready(function () {
-  $("#addTodo").addClass("navivagionHoverLook"); // it opens first
-  $("#addTodo").click(() => {
+   //data passed with GET
+   var login = getUserLogin();
+   if (login == null) {
+     $("#welcomeText").html(
+       "Hello guest you can try all features but they will not be assigned to your account! If you want them to be saved, you need to register. "
+     );
+     $("#logoutButton").text("Exit");
+   } else {
+     $("#welcomeText").html("Hello " + login + " !");
+   }
+   const allUserTodos = new Todo(login);
+
+  $("#addTodoButton").click(() => {
     showContentAndHideElse(".content");
     clearFields();
-    toggleHoverOnPressedButton("#addTodo");
+    toggleHoverOnPressedButton("#addTodoButton");
   });
-  $("#displayTODOs").click(() => {
+  $("#addTodoButton").click(); //homepage after login
+
+  $("#displayTODOsButton").click(() => {
     showContentAndHideElse("#todosDiv");
-    toggleHoverOnPressedButton("#displayTODOs");
-    displayTODOs(data.userLogin);
+    toggleHoverOnPressedButton("#displayTODOsButton");
+    allUserTodos.dislayUserTodos();
   });
-  $("#myAccount").click(() => {
+  $("#searchBar").keyup(() => {
+    allUserTodos.searchForTODO();
+  });
+  $("#myAccountButton").click(() => {
     showContentAndHideElse("#accountDetailsDiv");
-    toggleHoverOnPressedButton("#myAccount");
+    toggleHoverOnPressedButton("#myAccountButton");
     printUserData(getUserData(login));
   });
-  $("#projectDetails").click(() => {
+  $("#projectDetailsButton").click(() => {
     showContentAndHideElse("#projectDetailsDiv");
-    toggleHoverOnPressedButton("#projectDetails");
+    toggleHoverOnPressedButton("#projectDetailsButton");
+    printProjectInfo();
   });
   $("#logoutButton").click(() => {
     removeHoverFromNavBar();
@@ -32,62 +49,51 @@ $(document).ready(function () {
 
   $("#saveTodo").click(() => {
     if (!checkRadio("TODOtype")) {
-      return;
+      return false;
     }
     var todo = {};
     todo.id = "";
-    todo.userLogin = data.userLogin;
+    todo.userLogin = allUserTodos.userLogin;
     todo.title = $("#title").val();
     todo.description = $("#description").val();
-    var checkboxData = getCheckBoxData();
-    if (checkboxData == null) checkboxData = "brak";
-    todo.important = checkboxData;
+    var checkboxallUserTodos = getCheckBoxData();
+    if (checkboxallUserTodos == null) checkboxallUserTodos = "brak";
+    todo.important = checkboxallUserTodos;
     todo.type = checkRadio("TODOtype");
-    data.addTODOtoStorage(todo);
+    allUserTodos.addTODOtoStorage(todo);
     clearFields();
   });
 
   $("#deleteAllTODOs").click(() => {
     var dane =
-      "<span class='bigText'>Are you sure you want to ALL TODOs ?</span> <br>";
-    dane +=
-      "<button id='acceptAllDeletion' class='submitButton'>yes</button><button id='notAcceptDeletion' class='cancelButton'>no</button>";
+    `<span class='bigText'>Are you sure you want to ALL TODOs ?</span><br>
+    <button id='acceptAllDeletion' class='submitButton'>yes</button>
+    <button id='notAcceptDeletion' class='cancelButton' onclick='hideFullScrAlert("#fullScrWraper")'>no</button>`;
     fullScreenAlert(dane, "#fullScrWraper");
   });
-
-  $("#s").click(() => {
-    searchForTODO(data.userLogin);
-  });
-
   $("#fullScrAlert").on("click", "#acceptAllDeletion", () => {
-    removoAllUserTODOsfromStorage(data.userLogin);
+    allUserTodos.removoAllUserTODOsfromStorage();
     createAlert("info", "All todos removed");
     hideFullScrAlert("#fullScrWraper");
   });
-  $("#fullScrAlert").on("click", "#notAcceptDeletion", () => {
-    hideFullScrAlert("#fullScrWraper");
-  });
-  $("#fullScrAlert").on("click", "#acceptDeletion", () => {
-    hideFullScrAlert("#fullScrWraper");
-  });
-  $("#fullScrAlert").on("click", "#notAcceptEdit", () => {
-    hideFullScrAlert("#fullScrWraper");
-  });
 
-  //data passed with GET
-  var login = getUserLogin();
-  if (login == null) {
-    $("#welcomeText").html(
-      "Hello guest you can try all features but they will not be assigned to your account! If you want them to be saved, you need to register. "
-    );
-    $("#logoutButton").text("Exit");
-  } else {
-    $("#welcomeText").html("Hello " + login + " !");
-  }
-  const data = new Todo(login);
-  ///
 });
 
+function printProjectInfo(){
+  fetch('../projectInfo.html')
+.then(response => {
+    if (!response.ok) {
+        throw new Error("Txt loading error " + response.status);
+    }
+    return response.text();
+})
+.then(text => {
+    $("#projectDetailsDiv").html(text);
+})
+.catch(error => {
+   createAlert("error", "Failed to load txt file, pls try again later");
+});
+}
 function clearFields() {
   $("#title").val("");
   $("#description").val("");
@@ -97,10 +103,10 @@ function clearFields() {
   $("input[type=checkbox]").prop("checked", false);
 }
 function removeHoverFromNavBar() {
-  $("#addTodo").removeClass("navivagionHoverLook");
-  $("#displayTODOs").removeClass("navivagionHoverLook");
-  $("#myAccount").removeClass("navivagionHoverLook");
-  $("#projectDetails").removeClass("navivagionHoverLook");
+  $("#addTodoButton").removeClass("navivagionHoverLook");
+  $("#displayTODOsButton").removeClass("navivagionHoverLook");
+  $("#myAccountButton").removeClass("navivagionHoverLook");
+  $("#projectDetailsButton").removeClass("navivagionHoverLook");
 }
 
 function hideAll() {
@@ -126,7 +132,7 @@ function showContentAndHideElse(divNameOrId) {
       break;
     }
     case "#projectDetailsDiv": {
-      $("#projectDetailsDiv").css("display", "flex");
+      $("#projectDetailsDiv").css("display", "block");
       break;
     }
   }

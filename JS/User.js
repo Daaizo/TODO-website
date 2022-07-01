@@ -88,12 +88,7 @@ function updateLocalStorage(data) {
     createAlert("erorr", "Failed to create account.");
   }
 }
-function handleLogin() {
-  const currentUserName = document.getElementById("login").value;
-  const currentUserPass = document.getElementById("password").value;
-  sessionStorage.setItem("CURRENT USER NAME ", currentUserName);
-  sessionStorage.setItem("PASS", currentUserPass);
-}
+
 function getUserData(login) {
   var listOfUsers = getLocalStorage();
   for (i = 0; i < listOfUsers.length; i++) {
@@ -188,9 +183,9 @@ function editAccount() {
 
   </div>
   <span class="buttons">
-      <button class="cancelButton"   onclick=hideFullScrAlert("#fullScrWraper")>Cancel</button>
       <button class="submitButton" onclick=saveEditedAccount("${user.login}") >Save Edited data</button>
-    </span>
+      <button class="cancelButton"  onclick=hideFullScrAlert("#fullScrWraper")>Cancel</button>
+  </span>
 
 `;
   fullScreenAlert(htmlData, "#fullScrWraper");

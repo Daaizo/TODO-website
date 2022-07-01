@@ -36,10 +36,10 @@ class Todo {
     return userTodos;
   }
 
-  removoAllUserTODOsfromStorage(login) {
+  removoAllUserTODOsfromStorage() {
     var list = getLocalStorageWithTodos();
     for (let i = 0; i < list.length; i++) {
-      if (list[i].userLogin == login) {
+      if (list[i].userLogin == this.userLogin) {
         if (list.length != 1) {
           list.splice(i, 1);
           i = 0;
@@ -134,11 +134,14 @@ function editTODO(todoNumber) {
   var object = findTodoWithId(todoNumber);
   var todoToedit = object.todo;
   var htmlData =
-    "<div style='width: 100%;text-align: left;'><h1 class='bigText'> Edit TODO </h1> " +
-    $("#addTodoTable").html() +
-    " </div></br><button class='submitButton' id='acceptEdit' onclick='saveEditedTODO(" +
-    object.todoPos +
-    ")'>save edited todo</button> <button id='notAcceptEdit' class='cancelButton'>cancel</button>";
+    `<div style='width: 100%;text-align: left;'>
+      <h1 class='bigText'> Edit TODO </h1>
+      `+$("#addTodoTable").html() +
+    `</div></br>
+    <button class='submitButton' id='acceptEdit'
+      onclick='saveEditedTODO(${object.todoPos})'> save edited todo
+    </button>
+    <button id='notAcceptEdit' class='cancelButton' onclick='hideFullScrAlert("#fullScrWraper")'>cancel</button>`;
   fullScreenAlert(htmlData, "#fullScrWraper");
 
   $(".todoTitle").val(todoToedit.title);
@@ -189,11 +192,11 @@ function changeCheckboxValue(important) {
 function deleteTODO(todoNumber) {
   var object = findTodoWithId(todoNumber);
   var dane =
-    "<span class='bigText'>Are you sure you want to delete TODO ?</span> <br>";
-  dane +=
-    "<button id='acceptDeletion' class='submitButton' onclick='confirmedDelete(" +
-    object.todoPos +
-    ")'>yes</button><button id='notAcceptDeletion' class='cancelButton'>no</button>";
+    `<span class='bigText'>Are you sure you want to delete TODO ?</span> <br>
+    <button id='acceptDeletion' class='submitButton'
+      onclick='confirmedDelete("${object.todoPos}")'>yes
+    </button>
+    <button id='notAcceptDeletion' class='cancelButton' onclick='hideFullScrAlert("#fullScrWraper")'>no</button>`;
   fullScreenAlert(dane, "#fullScrWraper");
 }
 function confirmedDelete(i) {
@@ -204,8 +207,10 @@ function confirmedDelete(i) {
     lista.splice(i, 1);
   } else lista.pop();
   updateLocalStorageWithTodos(lista);
+  hideFullScrAlert("#fullScrWraper");
   createAlert("success", "TODO number " + number + " deleted");
   allUserTOdos.dislayUserTodos();
+
 }
 
 function checkRadio(radioName) {
