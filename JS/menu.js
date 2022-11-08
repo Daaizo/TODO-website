@@ -39,7 +39,7 @@ $(document).ready(function () {
   $("#logoutButton").click(() => {
     removeHoverFromNavBar();
     $(".navBar").toggleClass("showNavigation", this.chacked);
-    window.location.href = 'https://daaizo.github.io/HTML-school-project/';
+    window.location.href = 'https://daaizo.github.io/TODO-website/';
     return false;
   });
 
@@ -80,7 +80,7 @@ $(document).ready(function () {
 });
 
 function printProjectInfo(){
-  fetch('https://daaizo.github.io/HTML-school-project/projectInfo.html')
+  fetch('https://daaizo.github.io/TODO-website/projectInfo.html')
 .then(response => {
     if (!response.ok) {
         throw new Error("Txt loading error " + response.status);
