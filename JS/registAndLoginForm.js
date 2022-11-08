@@ -14,7 +14,7 @@ $(document).ready(function () {
   });
 
   $("#loginWithoutAccount").on("click", function () {
-    location.href = "/HTML-school-project/user.html";
+    location.href = "/TODO-website/user.html";
   });
 
   // when form is open clicking outside the window closes the form
