@@ -1,3 +1,4 @@
+<a href='https://daaizo.github.io/TODO-website/'>Click to try the website </a>
 <h2>Project features</h2>
 <ul id="projectFeaturesList">
     <li>registration</li>
